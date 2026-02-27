@@ -1,6 +1,7 @@
 import IssueCard from '@/components/IssueCard';
 import { Metadata } from 'next';
-import { Trees, Scale, Home as HomeIcon, Navigation2, Users } from 'lucide-react';
+import { Trees, Scale, Home as HomeIcon, Navigation2, Users, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Issues & Priorities | Celeste Johnson for Utah House District 59',
@@ -10,14 +11,24 @@ export const metadata: Metadata = {
 export default function IssuesPage() {
   return (
     <div className="bg-white">
-      {/* Page Hero */}
-      <section className="bg-gradient-to-r from-primary to-primary-light text-white py-16 md:py-20">
-        <div className="container mx-auto px-4">
+      {/* Modern Page Hero */}
+      <section className="relative bg-gradient-to-br from-primary via-[#2A4A7A] to-primary-light text-white py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 -right-48 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-32 left-1/4 w-72 h-72 bg-accent/15 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-8 backdrop-blur-md">
+              <CheckCircle2 size={16} className="text-secondary" />
+              <span className="text-sm font-semibold text-white/90">Platform</span>
+            </div>
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight">
               Issues & Priorities
             </h1>
-            <p className="text-xl text-blue-100">
+            <p className="text-lg md:text-2xl text-white/80 leading-relaxed">
               Community-focused solutions for the challenges facing District 59
             </p>
           </div>
@@ -100,29 +111,34 @@ export default function IssuesPage() {
       />
 
       {/* Call to Action */}
-      <section className="bg-primary text-white py-16 md:py-20">
-        <div className="container mx-auto px-4">
+      <section className="bg-gradient-to-r from-primary to-primary-light text-white py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Let's Build a Better Future Together
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed">
               These priorities reflect the values of our community. Join us in bringing 
               community-focused leadership to the state legislature.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Link
                 href="/contact"
-                className="bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
+                className="inline-flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:translate-y-[-3px] group"
               >
                 Get Involved
-              </a>
-              <a
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+              <Link
                 href="/about"
-                className="bg-white hover:bg-neutral-100 text-primary px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-md hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-100 text-primary px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 About Celeste
-              </a>
+              </Link>
             </div>
           </div>
         </div>
