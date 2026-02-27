@@ -2,9 +2,9 @@ import Hero from '@/components/Hero';
 import PriorityCard from '@/components/PriorityCard';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import Link from 'next/link';
-import { Trees, Home, Road, ArrowRight } from 'lucide-react';
+import { Trees, Home as HomeIcon, Navigation2, ArrowRight } from 'lucide-react';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Hero />
@@ -67,12 +67,12 @@ export default function Home() {
                 description="Protect our farmland and open spaces from overdevelopment. Preserve the rural character that defines our community and maintains our quality of life."
               />
               <PriorityCard
-                icon={<Home size={48} />}
+                icon={<HomeIcon size={48} />}
                 title="Local Control & Smart Growth"
                 description="Empower local governments to make decisions about their own communities. Resist state overreach and ensure residents have a voice in development."
               />
               <PriorityCard
-                icon={<Road size={48} />}
+                icon={<Navigation2 size={48} />}
                 title="Infrastructure & Housing"
                 description="Support responsible infrastructure investment and diverse housing options that serve working families without sacrificing community character."
               />

@@ -1,6 +1,6 @@
 import IssueCard from '@/components/IssueCard';
 import { Metadata } from 'next';
-import { Trees, Scale, Home, Road, Users } from 'lucide-react';
+import { Trees, Scale, Home as HomeIcon, Navigation2, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Issues & Priorities | Celeste Johnson for Utah House District 59',
@@ -56,7 +56,7 @@ export default function IssuesPage() {
 
       {/* Issue 3: Affordable Housing */}
       <IssueCard
-        icon={<Home size={64} />}
+        icon={<HomeIcon size={64} />}
         title="Affordable Housing"
         quote="Everyone deserves a place to call home in the community they love"
         points={[
@@ -71,7 +71,7 @@ export default function IssuesPage() {
 
       {/* Issue 4: Transportation & Infrastructure */}
       <IssueCard
-        icon={<Road size={64} />}
+        icon={<Navigation2 size={64} />}
         title="Transportation & Infrastructure"
         quote="Safe, accessible roads and transit benefit everyone"
         points={[
