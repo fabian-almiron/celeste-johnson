@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { CheckCircle, Heart } from 'lucide-react';
+import { CheckCircle, Heart, Award, Users, Lightbulb } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Celeste Johnson | Utah House District 59',
