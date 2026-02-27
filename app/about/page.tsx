@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { CheckCircle, Heart } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Celeste Johnson | Utah House District 59',
@@ -10,10 +11,10 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       {/* Page Hero */}
-      <section className="bg-gradient-to-r from-primary to-primary-light text-white py-16">
+      <section className="bg-gradient-to-r from-primary to-primary-light text-white py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               About Celeste
             </h1>
             <p className="text-xl text-blue-100">
@@ -24,26 +25,26 @@ export default function AboutPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             
             {/* Pull Quote */}
-            <div className="bg-neutral-50 border-l-4 border-primary p-6 mb-12 rounded-r-lg">
-              <blockquote className="text-2xl font-semibold text-neutral-800 italic">
+            <div className="bg-neutral-50 border-l-4 border-secondary p-8 mb-12 md:mb-16 rounded-r-xl">
+              <blockquote className="text-2xl md:text-3xl font-semibold text-neutral-800 italic">
                 "My agenda is really about the community. I believe in listening first, 
                 and making decisions that reflect the values and needs of the people I serve."
               </blockquote>
-              <p className="text-right mt-4 text-neutral-600 font-medium">— Celeste Johnson</p>
+              <p className="text-right mt-6 text-neutral-600 font-medium">— Celeste Johnson</p>
             </div>
 
             {/* Background Section */}
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-neutral-900 mb-6 flex items-center">
-                <span className="w-2 h-8 bg-primary mr-4 rounded"></span>
+            <div className="mb-16 md:mb-20">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-8 flex items-center">
+                <span className="w-1 h-10 bg-primary mr-4 rounded"></span>
                 Background
               </h2>
-              <div className="space-y-4 text-lg text-neutral-700 leading-relaxed">
+              <div className="space-y-6 text-lg text-neutral-700 leading-relaxed">
                 <p>
                   Celeste Johnson has deep roots in Utah, with a lifelong commitment to building 
                   and strengthening communities. Her background in public service, local government, 
@@ -67,26 +68,26 @@ export default function AboutPage() {
             </div>
 
             {/* Leadership in Midway Section */}
-            <div className="mb-12 bg-neutral-50 p-8 rounded-xl">
-              <h2 className="text-3xl font-bold text-neutral-900 mb-6 flex items-center">
-                <span className="w-2 h-8 bg-primary mr-4 rounded"></span>
+            <div className="mb-16 md:mb-20 bg-neutral-50 p-8 md:p-12 rounded-2xl border border-neutral-200">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-10 flex items-center">
+                <span className="w-1 h-10 bg-primary mr-4 rounded"></span>
                 Leadership in Midway
               </h2>
-              <p className="text-lg text-neutral-700 mb-6 leading-relaxed">
+              <p className="text-lg text-neutral-700 mb-10 leading-relaxed">
                 As Mayor of Midway, Celeste demonstrated the kind of leadership that our district 
                 needs in the state legislature. Her accomplishments include:
               </p>
               
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4 font-bold text-xl">
+              <div className="space-y-8">
+                <div className="flex items-start gap-6">
+                  <div className="bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center flex-shrink-0 font-bold text-xl">
                     1
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3">
                       Preserved Open Spaces and Farmland
                     </h3>
-                    <p className="text-neutral-700">
+                    <p className="text-neutral-700 text-lg leading-relaxed">
                       Led initiatives to protect agricultural land from overdevelopment, working 
                       with landowners, conservation groups, and residents to maintain Midway's 
                       rural character while respecting property rights.
@@ -94,15 +95,15 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4 font-bold text-xl">
+                <div className="flex items-start gap-6">
+                  <div className="bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center flex-shrink-0 font-bold text-xl">
                     2
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3">
                       Managed Growth Responsibly
                     </h3>
-                    <p className="text-neutral-700">
+                    <p className="text-neutral-700 text-lg leading-relaxed">
                       Navigated complex development decisions by prioritizing community input and 
                       ensuring that growth served residents rather than outside interests. Struck a 
                       balance between economic vitality and quality of life.
@@ -110,15 +111,15 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4 font-bold text-xl">
+                <div className="flex items-start gap-6">
+                  <div className="bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center flex-shrink-0 font-bold text-xl">
                     3
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3">
                       Strengthened Local Partnerships
                     </h3>
-                    <p className="text-neutral-700">
+                    <p className="text-neutral-700 text-lg leading-relaxed">
                       Built collaborative relationships with neighboring communities, county 
                       officials, and state agencies to address regional challenges like 
                       transportation, water resources, and infrastructure.
@@ -126,15 +127,15 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 mr-4 font-bold text-xl">
+                <div className="flex items-start gap-6">
+                  <div className="bg-primary text-white rounded-full w-14 h-14 flex items-center justify-center flex-shrink-0 font-bold text-xl">
                     4
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-neutral-900 mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3">
                       Championed Transparent Leadership
                     </h3>
-                    <p className="text-neutral-700">
+                    <p className="text-neutral-700 text-lg leading-relaxed">
                       Made government more accessible through regular town halls, open communication 
                       channels, and a commitment to explaining decisions clearly and honestly.
                     </p>
@@ -144,12 +145,12 @@ export default function AboutPage() {
             </div>
 
             {/* Running for House District 59 Section */}
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-neutral-900 mb-6 flex items-center">
-                <span className="w-2 h-8 bg-primary mr-4 rounded"></span>
+            <div className="mb-16 md:mb-20">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-8 flex items-center">
+                <span className="w-1 h-10 bg-primary mr-4 rounded"></span>
                 Running for House District 59
               </h2>
-              <div className="space-y-4 text-lg text-neutral-700 leading-relaxed">
+              <div className="space-y-6 text-lg text-neutral-700 leading-relaxed">
                 <p>
                   Celeste is running for the Utah House of Representatives because she believes that 
                   the state legislature needs leaders who understand local communities and will fight 
@@ -174,11 +175,14 @@ export default function AboutPage() {
             </div>
 
             {/* Personal Section */}
-            <div className="bg-primary-light text-white p-8 rounded-xl mb-12">
-              <h2 className="text-3xl font-bold mb-6">
-                Personal
-              </h2>
-              <div className="space-y-4 text-lg leading-relaxed">
+            <div className="bg-gradient-to-br from-primary to-primary-light text-white p-8 md:p-12 rounded-2xl mb-16 md:mb-20 border border-primary-light">
+              <div className="flex gap-4 items-start mb-6">
+                <Heart size={32} className="flex-shrink-0 text-secondary" />
+                <h2 className="text-3xl md:text-4xl font-bold">
+                  Personal
+                </h2>
+              </div>
+              <div className="space-y-6 text-lg text-blue-100 leading-relaxed">
                 <p>
                   When she's not working on community issues, Celeste enjoys hiking, skiing, and 
                   exploring Utah's incredible public lands with her family. She's an active member 
@@ -193,24 +197,26 @@ export default function AboutPage() {
             </div>
 
             {/* Call to Action */}
-            <div className="text-center bg-neutral-50 p-8 rounded-xl">
-              <h2 className="text-3xl font-bold text-neutral-900 mb-4">
+            <div className="text-center bg-neutral-50 p-8 md:p-12 rounded-2xl border border-neutral-200">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
                 Support Celeste's Campaign
               </h2>
-              <p className="text-lg text-neutral-700 mb-6 max-w-2xl mx-auto">
+              <p className="text-lg text-neutral-700 mb-8 max-w-2xl mx-auto">
                 Join us in bringing community-focused leadership to the Utah State Legislature.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
-                  className="bg-secondary hover:bg-secondary-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+                  className="inline-flex items-center justify-center bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-lg font-bold transition-all duration-200 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
                 >
+                  <CheckCircle size={20} className="mr-2" />
                   Volunteer
                 </Link>
                 <Link
                   href="/issues"
-                  className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+                  className="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-lg font-bold transition-all duration-200 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
                 >
+                  <CheckCircle size={20} className="mr-2" />
                   View Issues
                 </Link>
               </div>

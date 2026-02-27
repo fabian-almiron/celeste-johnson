@@ -1,6 +1,6 @@
 import IssueCard from '@/components/IssueCard';
 import { Metadata } from 'next';
-import { FaTree, FaBalanceScale, FaHome, FaRoad, FaUsers } from 'react-icons/fa';
+import { Trees, Scale, Home, Road, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Issues & Priorities | Celeste Johnson for Utah House District 59',
@@ -11,10 +11,10 @@ export default function IssuesPage() {
   return (
     <div className="bg-white">
       {/* Page Hero */}
-      <section className="bg-gradient-to-r from-primary to-primary-light text-white py-16">
+      <section className="bg-gradient-to-r from-primary to-primary-light text-white py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               Issues & Priorities
             </h1>
             <p className="text-xl text-blue-100">
@@ -26,7 +26,7 @@ export default function IssuesPage() {
 
       {/* Issue 1: Open Space & Farmland Preservation */}
       <IssueCard
-        icon={<FaTree size={64} />}
+        icon={<Trees size={64} />}
         title="Open Space & Farmland Preservation"
         quote="Our open spaces define who we are as a community"
         points={[
@@ -41,7 +41,7 @@ export default function IssuesPage() {
 
       {/* Issue 2: Local Control & Smart Growth */}
       <IssueCard
-        icon={<FaBalanceScale size={64} />}
+        icon={<Scale size={64} />}
         title="Local Control & Smart Growth"
         quote="My agenda is really about the community"
         points={[
@@ -56,7 +56,7 @@ export default function IssuesPage() {
 
       {/* Issue 3: Affordable Housing */}
       <IssueCard
-        icon={<FaHome size={64} />}
+        icon={<Home size={64} />}
         title="Affordable Housing"
         quote="Everyone deserves a place to call home in the community they love"
         points={[
@@ -71,7 +71,7 @@ export default function IssuesPage() {
 
       {/* Issue 4: Transportation & Infrastructure */}
       <IssueCard
-        icon={<FaRoad size={64} />}
+        icon={<Road size={64} />}
         title="Transportation & Infrastructure"
         quote="Safe, accessible roads and transit benefit everyone"
         points={[
@@ -86,7 +86,7 @@ export default function IssuesPage() {
 
       {/* Issue 5: Transparent, Inclusive Leadership */}
       <IssueCard
-        icon={<FaUsers size={64} />}
+        icon={<Users size={64} />}
         title="Transparent, Inclusive Leadership"
         quote="Leadership means listening"
         points={[
@@ -100,10 +100,10 @@ export default function IssuesPage() {
       />
 
       {/* Call to Action */}
-      <section className="bg-primary text-white py-16">
+      <section className="bg-primary text-white py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               Let's Build a Better Future Together
             </h2>
             <p className="text-xl text-blue-100 mb-8">
@@ -113,13 +113,13 @@ export default function IssuesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="bg-secondary hover:bg-secondary-dark px-8 py-4 rounded-lg font-bold text-lg transition-colors duration-200"
+                className="bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-md hover:shadow-lg hover:translate-y-[-2px]"
               >
                 Get Involved
               </a>
               <a
                 href="/about"
-                className="bg-white hover:bg-neutral-100 text-primary px-8 py-4 rounded-lg font-bold text-lg transition-colors duration-200"
+                className="bg-white hover:bg-neutral-100 text-primary px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 About Celeste
               </a>

@@ -1,4 +1,4 @@
-import { FaExternalLinkAlt, FaNewspaper } from 'react-icons/fa';
+import { Newspaper, ExternalLink } from 'lucide-react';
 
 interface NewsItemProps {
   title: string;
@@ -13,14 +13,14 @@ const NewsItem = ({ title, publication, date, description, link }: NewsItemProps
     <article className="border-b border-neutral-200 pb-6 last:border-b-0">
       <div className="flex items-start gap-4">
         <div className="text-primary mt-1 flex-shrink-0">
-          <FaNewspaper size={24} />
+          <Newspaper size={24} />
         </div>
-        <div className="flex-1">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
             <h3 className="text-xl md:text-2xl font-bold text-neutral-900">
               {title}
             </h3>
-            <div className="text-sm text-neutral-500 whitespace-nowrap">
+            <div className="text-sm text-neutral-500 whitespace-nowrap flex-shrink-0">
               {date}
             </div>
           </div>
@@ -35,10 +35,10 @@ const NewsItem = ({ title, publication, date, description, link }: NewsItemProps
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-primary hover:text-primary-dark font-semibold transition-colors duration-200"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-semibold transition-colors duration-200"
             >
               Read Full Article
-              <FaExternalLinkAlt className="ml-2" size={14} />
+              <ExternalLink size={16} />
             </a>
           )}
         </div>

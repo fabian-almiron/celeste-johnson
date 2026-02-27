@@ -1,120 +1,131 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import { Send } from 'lucide-react';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Frontend only - simulate submission
-    if (formData.name && formData.email && formData.message) {
-      setStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      setTimeout(() => setStatus('idle'), 5000);
-    } else {
-      setStatus('error');
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      (e.target as HTMLFormElement).reset();
+      setTimeout(() => setIsSubmitted(false), 4000);
+    }, 1000);
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {isSubmitted && (
+        <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+          Thank you! We'll get back to you soon.
+        </div>
+      )}
+
+      {/* Name Field */}
       <div>
-        <label htmlFor="name" className="block text-sm font-semibold text-neutral-700 mb-2">
-          Name <span className="text-secondary">*</span>
+        <label htmlFor="name" className="block text-sm font-semibold text-neutral-900 mb-2">
+          Full Name *
         </label>
         <input
           type="text"
           id="name"
           name="name"
-          value={formData.name}
-          onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-          placeholder="Your full name"
+          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
+          placeholder="Your name"
         />
       </div>
 
+      {/* Email Field */}
       <div>
-        <label htmlFor="email" className="block text-sm font-semibold text-neutral-700 mb-2">
-          Email <span className="text-secondary">*</span>
+        <label htmlFor="email" className="block text-sm font-semibold text-neutral-900 mb-2">
+          Email Address *
         </label>
         <input
           type="email"
           id="email"
           name="email"
-          value={formData.email}
-          onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-          placeholder="your.email@example.com"
+          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
+          placeholder="your@email.com"
         />
       </div>
 
+      {/* Phone Field */}
       <div>
-        <label htmlFor="phone" className="block text-sm font-semibold text-neutral-700 mb-2">
-          Phone (Optional)
+        <label htmlFor="phone" className="block text-sm font-semibold text-neutral-900 mb-2">
+          Phone Number
         </label>
         <input
           type="tel"
           id="phone"
           name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
           placeholder="(123) 456-7890"
         />
       </div>
 
+      {/* Interest Field */}
       <div>
-        <label htmlFor="message" className="block text-sm font-semibold text-neutral-700 mb-2">
-          Message <span className="text-secondary">*</span>
+        <label htmlFor="interest" className="block text-sm font-semibold text-neutral-900 mb-2">
+          How can we help? *
+        </label>
+        <select
+          id="interest"
+          name="interest"
+          required
+          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
+        >
+          <option value="">Select an option</option>
+          <option value="volunteer">I want to volunteer</option>
+          <option value="question">I have a question</option>
+          <option value="endorsement">I want to endorse Celeste</option>
+          <option value="event">I want to host an event</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      {/* Message Field */}
+      <div>
+        <label htmlFor="message" className="block text-sm font-semibold text-neutral-900 mb-2">
+          Message
         </label>
         <textarea
           id="message"
           name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          rows={6}
-          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-          placeholder="Tell us how you'd like to get involved or ask a question..."
-        />
+          rows={5}
+          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 resize-none"
+          placeholder="Tell us more..."
+        ></textarea>
       </div>
 
+      {/* Submit Button */}
       <button
         type="submit"
-        className="w-full bg-secondary hover:bg-secondary-dark text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+        disabled={isSubmitting}
+        className="w-full bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
-        Send Message
+        {isSubmitting ? (
+          <>
+            <span className="inline-block animate-spin">⏳</span> Sending...
+          </>
+        ) : (
+          <>
+            Send Message <Send size={20} />
+          </>
+        )}
       </button>
 
-      {status === 'success' && (
-        <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-          <p className="font-semibold">Thank you for reaching out!</p>
-          <p className="text-sm">We'll get back to you as soon as possible.</p>
-        </div>
-      )}
-
-      {status === 'error' && (
-        <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-          <p className="font-semibold">Please fill in all required fields.</p>
-        </div>
-      )}
+      <p className="text-xs text-neutral-500">
+        * Required fields
+      </p>
     </form>
   );
 };

@@ -1,72 +1,78 @@
 import { ReactNode } from 'react';
+import { CheckCircle } from 'lucide-react';
 
 interface IssueCardProps {
   icon: ReactNode;
   title: string;
   quote: string;
   points: string[];
-  imagePosition?: 'left' | 'right';
-  backgroundColor?: string;
+  imagePosition: 'left' | 'right';
+  backgroundColor: string;
 }
 
-const IssueCard = ({ 
-  icon, 
-  title, 
-  quote, 
-  points, 
-  imagePosition = 'left',
-  backgroundColor = 'bg-white'
+const IssueCard = ({
+  icon,
+  title,
+  quote,
+  points,
+  imagePosition,
+  backgroundColor,
 }: IssueCardProps) => {
-  const isLeft = imagePosition === 'left';
+  const content = (
+    <div>
+      <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+        {title}
+      </h2>
+      
+      {/* Quote */}
+      <blockquote className="border-l-4 border-secondary pl-6 my-6">
+        <p className="text-xl font-semibold text-neutral-800 italic">
+          "{quote}"
+        </p>
+      </blockquote>
+
+      {/* Points List */}
+      <ul className="space-y-4 mt-8">
+        {points.map((point, index) => (
+          <li key={index} className="flex gap-4 items-start">
+            <CheckCircle size={24} className="text-secondary flex-shrink-0 mt-0.5" />
+            <span className="text-lg text-neutral-700">{point}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  const imagePlaceholder = (
+    <div className="w-full aspect-square bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center">
+      <div className="text-primary/50">
+        {icon}
+      </div>
+    </div>
+  );
 
   return (
-    <div className={`${backgroundColor} py-16`}>
+    <section className={`py-16 md:py-20 ${backgroundColor}`}>
       <div className="container mx-auto px-4">
-        <div className={`max-w-6xl mx-auto flex flex-col ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
-          
-          {/* Icon/Image Section */}
-          <div className="lg:w-1/3 flex justify-center">
-            <div className="bg-primary text-white rounded-full w-32 h-32 flex items-center justify-center shadow-lg">
-              {icon}
-            </div>
-          </div>
-
-          {/* Content Section */}
-          <div className="lg:w-2/3">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
-              {title}
-            </h2>
-            
-            <div className="bg-neutral-100 border-l-4 border-primary p-4 mb-6 rounded-r-lg">
-              <p className="text-xl italic text-neutral-700">
-                "{quote}"
-              </p>
-            </div>
-
-            <ul className="space-y-3">
-              {points.map((point, index) => (
-                <li key={index} className="flex items-start">
-                  <svg
-                    className="w-6 h-6 text-primary mr-3 flex-shrink-0 mt-1"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-lg text-neutral-700 leading-relaxed">
-                    {point}
-                  </span>
-                </li>
-              ))}
-            </ul>
+        <div className="max-w-6xl mx-auto">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center ${
+            imagePosition === 'right' ? 'md:flex-row-reverse' : ''
+          }`}>
+            {imagePosition === 'left' ? (
+              <>
+                <div className="flex justify-center md:justify-start">{imagePlaceholder}</div>
+                <div>{content}</div>
+              </>
+            ) : (
+              <>
+                <div>{content}</div>
+                <div className="flex justify-center md:justify-end">{imagePlaceholder}</div>
+              </>
+            )}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
