@@ -91,10 +91,10 @@ export default function HomePage() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-sm overflow-hidden bg-muted">
                 <img
-                  src="/images/celeste-hero.jpg"
-                  alt="Celeste Johnson, candidate for Utah House District 59"
+                  src="https://t3.storageapi.dev/convenient-matchbox-rws-pv/chat-images/f02df67c-5fe6-4fa1-b03e-370e33825d79-celestejohnson2025-76.jpg"
+                  alt="Celeste Johnson, candidate for Utah House District 59 — official portrait"
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: '70% top' }}
+                  style={{ objectPosition: 'center top' }}
                 />
               </div>
               {/* Decorative accent */}
