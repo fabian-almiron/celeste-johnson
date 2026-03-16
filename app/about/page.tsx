@@ -96,9 +96,10 @@ export default function AboutPage() {
             <div className="lg:col-span-2 relative">
               <div className="aspect-[3/4] rounded-sm overflow-hidden bg-muted sticky top-28">
                 <img
-                  src="/placeholder.svg?height=800&width=600"
-                  alt="Celeste Johnson, candidate for Utah House District 59"
+                  src="/images/celeste-community.jpg"
+                  alt="Celeste Johnson with local farmers and community members in a Wasatch Back barn"
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center top' }}
                 />
               </div>
             </div>
