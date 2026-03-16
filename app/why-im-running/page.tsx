@@ -55,7 +55,7 @@ export default function WhyRunningPage() {
             <h1
               id="why-running-heading"
               className="mt-3 text-5xl lg:text-7xl font-bold text-white leading-tight text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               Why I&apos;m
               <br />
@@ -106,7 +106,7 @@ export default function WhyRunningPage() {
             >
               <p
                 className="text-2xl font-medium text-foreground italic text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 "We deserve representation that asks questions, listens
                 carefully, and is willing to speak up when something doesn&apos;t
@@ -139,7 +139,7 @@ export default function WhyRunningPage() {
 
             <p
               className="mt-8 text-foreground font-semibold text-lg"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               – Celeste Johnson
             </p>
@@ -160,7 +160,7 @@ export default function WhyRunningPage() {
               <h2
                 id="motivations-heading"
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Four reasons Celeste is in this race
               </h2>
@@ -174,14 +174,14 @@ export default function WhyRunningPage() {
                 >
                   <span
                     className="text-5xl font-bold text-border"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                     aria-hidden="true"
                   >
                     0{i + 1}
                   </span>
                   <h3
                     className="mt-4 text-xl font-semibold text-foreground text-balance"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                   >
                     {item.heading}
                   </h3>
@@ -207,7 +207,7 @@ export default function WhyRunningPage() {
             <h2
               id="accountability-heading"
               className="mt-3 text-4xl font-bold text-white text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               The Wasatch Back deserves a voice in the Legislature
             </h2>
@@ -238,7 +238,7 @@ export default function WhyRunningPage() {
                 >
                   <h3
                     className="font-semibold text-white text-lg mb-2"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                   >
                     {item.title}
                   </h3>
@@ -267,7 +267,7 @@ export default function WhyRunningPage() {
               </span>
               <h2
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 A community worth protecting
               </h2>
@@ -301,7 +301,7 @@ export default function WhyRunningPage() {
           <div className="max-w-2xl mx-auto">
             <h2
               className="text-4xl font-bold text-white text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               Stand with Celeste
             </h2>

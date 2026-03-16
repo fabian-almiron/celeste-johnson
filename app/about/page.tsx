@@ -61,7 +61,7 @@ export default function AboutPage() {
           {/* Decorative text */}
           <div
             className="absolute -right-8 top-10 text-[16rem] font-bold leading-none text-white/[0.03] select-none pointer-events-none hidden lg:block"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "'Libre Baskerville', serif" }}
             aria-hidden="true"
           >
             CJ
@@ -73,7 +73,7 @@ export default function AboutPage() {
             <h1
               id="about-heading"
               className="mt-3 text-5xl lg:text-7xl font-bold text-white leading-tight text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               A life built in
               <br />
@@ -148,7 +148,7 @@ export default function AboutPage() {
               <h2
                 id="timeline-heading"
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 A record of showing up
               </h2>
@@ -178,7 +178,7 @@ export default function AboutPage() {
                       </span>
                       <h3
                         className="mt-2 text-xl font-semibold text-foreground"
-                        style={{ fontFamily: "'Playfair Display', serif" }}
+                        style={{ fontFamily: "'Libre Baskerville', serif" }}
                       >
                         {item.title}
                       </h3>
@@ -203,7 +203,7 @@ export default function AboutPage() {
                 </span>
                 <h2
                   className="mt-3 text-4xl font-bold text-foreground text-balance"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  style={{ fontFamily: "'Libre Baskerville', serif" }}
                 >
                   What her leadership delivered
                 </h2>
@@ -226,7 +226,7 @@ export default function AboutPage() {
                     >
                       <p
                         className="text-4xl font-bold text-primary"
-                        style={{ fontFamily: "'Playfair Display', serif" }}
+                        style={{ fontFamily: "'Libre Baskerville', serif" }}
                       >
                         {item.stat}
                       </p>
@@ -280,7 +280,7 @@ export default function AboutPage() {
               <h2
                 id="values-heading"
                 className="mt-3 text-4xl font-bold text-white text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Grounded values. Proven character.
               </h2>
@@ -316,7 +316,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2
               className="text-3xl font-bold text-foreground text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               Ready to support Celeste&apos;s campaign?
             </h2>

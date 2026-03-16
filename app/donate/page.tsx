@@ -58,7 +58,7 @@ export default function DonatePage() {
               <h1
                 id="donate-heading"
                 className="mt-3 text-5xl lg:text-7xl font-bold text-white leading-tight text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Invest in the
                 <br />
@@ -97,7 +97,7 @@ export default function DonatePage() {
               <h2
                 id="contribution-heading"
                 className="mt-3 text-3xl font-bold text-foreground text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Your donation supports a better future for District 59
               </h2>
@@ -140,7 +140,7 @@ export default function DonatePage() {
               <div className="bg-card rounded-sm border border-border p-8 lg:p-10 shadow-sm">
                 <h3
                   className="text-2xl font-bold text-foreground mb-2"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  style={{ fontFamily: "'Libre Baskerville', serif" }}
                 >
                   Make a contribution
                 </h3>
@@ -223,7 +223,7 @@ export default function DonatePage() {
               <h2
                 id="other-ways-heading"
                 className="text-3xl font-bold text-foreground text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Can&apos;t donate right now?
               </h2>
@@ -259,7 +259,7 @@ export default function DonatePage() {
                 >
                   <h3
                     className="text-lg font-semibold text-foreground mb-2"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                   >
                     {item.title}
                   </h3>
@@ -293,7 +293,7 @@ export default function DonatePage() {
             <h2
               id="transparency-heading"
               className="text-3xl font-bold text-white text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               A campaign you can trust
             </h2>

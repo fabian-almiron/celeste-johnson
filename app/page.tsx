@@ -39,7 +39,7 @@ export default function HomePage() {
             <h1
               id="hero-headline"
               className="text-5xl sm:text-6xl lg:text-8xl font-bold text-white leading-none tracking-tight mb-6 animate-fade-up"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               Celeste
               <br />
@@ -96,7 +96,7 @@ export default function HomePage() {
               </span>
               <h2
                 className="mt-3 text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 A life built in the{' '}
                 <span className="italic">Wasatch Back</span>
@@ -143,7 +143,7 @@ export default function HomePage() {
               </span>
               <h2
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Proven leadership. Local roots.
               </h2>
@@ -195,7 +195,7 @@ export default function HomePage() {
                   </div>
                   <h3
                     className="font-semibold text-foreground text-lg mb-2"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                   >
                     {item.title}
                   </h3>
@@ -217,7 +217,7 @@ export default function HomePage() {
               </span>
               <h2
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 What Celeste is fighting for
               </h2>
@@ -262,14 +262,14 @@ export default function HomePage() {
                 >
                   <span
                     className="absolute top-5 right-6 text-5xl font-bold text-border group-hover:text-primary/10 transition-colors duration-300"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                     aria-hidden="true"
                   >
                     {issue.number}
                   </span>
                   <h3
                     className="text-xl font-semibold text-foreground mb-3 text-balance pr-12"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                   >
                     {issue.title}
                   </h3>
@@ -303,7 +303,7 @@ export default function HomePage() {
           {/* Decorative large quotation mark */}
           <div
             className="absolute top-8 left-8 text-[12rem] leading-none text-white/5 select-none pointer-events-none"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "'Libre Baskerville', serif" }}
             aria-hidden="true"
           >
             &ldquo;
@@ -318,7 +318,7 @@ export default function HomePage() {
               <p
                 className="text-2xl sm:text-3xl lg:text-4xl font-medium leading-snug text-balance"
                 style={{
-                  fontFamily: "'Playfair Display', serif",
+                  fontFamily: "'Libre Baskerville', serif",
                   color: 'var(--section-dark-foreground)',
                 }}
               >
@@ -369,7 +369,7 @@ export default function HomePage() {
               <h2
                 id="get-involved-heading"
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Help bring local voices to the Legislature
               </h2>
@@ -401,7 +401,7 @@ export default function HomePage() {
                 >
                   <p
                     className="font-semibold text-foreground group-hover:text-primary transition-colors"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                   >
                     {item.label}
                   </p>
@@ -424,7 +424,7 @@ export default function HomePage() {
             <h2
               id="donate-heading"
               className="text-4xl lg:text-5xl font-bold text-white text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               Support this campaign
             </h2>

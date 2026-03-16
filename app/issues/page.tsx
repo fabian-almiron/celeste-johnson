@@ -17,9 +17,9 @@ const issues = [
     icon: <Leaf size={28} />,
     title: 'Protecting Farms, Open Spaces & Community Character',
     subhead: 'What We Protect',
-    color: 'text-emerald-700',
-    bgAccent: 'bg-emerald-50',
-    borderAccent: 'border-emerald-200',
+    color: 'text-primary',
+    bgAccent: 'bg-primary/10',
+    borderAccent: 'border-primary/20',
     body: [
       "The Wasatch Back is defined by its working farms, open land, and small-town character — but once those are gone, they are gone for good.",
       "As mayor of Midway, Celeste helped give farmers and landowners real, voluntary options to conserve their land while remaining financially secure. Those local investments unlocked additional state and federal funding and are delivering lasting results for the community.",
@@ -36,9 +36,9 @@ const issues = [
     icon: <Users size={28} />,
     title: 'Local Voices, Local Choices',
     subhead: 'Who Is At The Table Matters',
-    color: 'text-sky-700',
-    bgAccent: 'bg-sky-50',
-    borderAccent: 'border-sky-200',
+    color: 'text-accent',
+    bgAccent: 'bg-accent/10',
+    borderAccent: 'border-accent/20',
     body: [
       "Communities should be able to solve problems locally — with the people who understand the impacts best. But too many state-level decisions are made without a clear understanding of how they will affect communities like those on the Wasatch Back.",
       "Celeste is running to bring local experience to the Legislature, to be a partner to community leaders, and to make sure small towns, resort communities, and rural areas are part of the conversation.",
@@ -54,9 +54,9 @@ const issues = [
     icon: <Home size={28} />,
     title: 'Housing Affordability That Actually Works',
     subhead: 'How We Measure Outcomes',
-    color: 'text-amber-700',
-    bgAccent: 'bg-amber-50',
-    borderAccent: 'border-amber-200',
+    color: 'text-primary',
+    bgAccent: 'bg-primary/10',
+    borderAccent: 'border-primary/20',
     body: [
       "Housing affordability on the Wasatch Back doesn't look the same as it does in other parts of Utah.",
       "Celeste knows firsthand how state policies meant to increase affordability can fall short when they ignore local realities. In resort-adjacent communities, housing labeled 'affordable' on paper often rents for prices working families simply can't afford.",
@@ -73,9 +73,9 @@ const issues = [
     icon: <Heart size={28} />,
     title: 'Strong Communities, Healthy Families',
     subhead: 'Community Wellbeing Without Culture Wars',
-    color: 'text-rose-700',
-    bgAccent: 'bg-rose-50',
-    borderAccent: 'border-rose-200',
+    color: 'text-accent',
+    bgAccent: 'bg-accent/10',
+    borderAccent: 'border-accent/20',
     body: [
       "Celeste believes strong communities are built when families feel safe, supported, and able to thrive — and when government plays a responsible role in helping make that possible.",
       "Through her community work, she has seen how issues like family stability, access to local support services, and the well-being of women and children affect the health of an entire community.",
@@ -106,7 +106,7 @@ export default function IssuesPage() {
             <h1
               id="issues-heading"
               className="mt-3 text-5xl lg:text-7xl font-bold text-white leading-tight text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               The issues that
               <br />
@@ -160,7 +160,7 @@ export default function IssuesPage() {
                     </div>
                     <p
                       className="text-6xl font-bold text-border"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
+                      style={{ fontFamily: "'Libre Baskerville', serif" }}
                       aria-hidden="true"
                     >
                       {issue.number}
@@ -171,7 +171,7 @@ export default function IssuesPage() {
                     <h2
                       id={`issue-${issue.id}-heading`}
                       className="mt-3 text-2xl lg:text-3xl font-bold text-foreground text-balance"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
+                      style={{ fontFamily: "'Libre Baskerville', serif" }}
                     >
                       {issue.title}
                     </h2>
@@ -180,7 +180,7 @@ export default function IssuesPage() {
                       <div className="mt-6 p-5 rounded-sm bg-primary/10 border border-primary/20">
                         <p
                           className="text-4xl font-bold text-primary"
-                          style={{ fontFamily: "'Playfair Display', serif" }}
+                          style={{ fontFamily: "'Libre Baskerville', serif" }}
                         >
                           {issue.pullStat}
                         </p>
@@ -206,7 +206,7 @@ export default function IssuesPage() {
                   <blockquote className="mt-10 pl-5 border-l-4 border-accent">
                     <p
                       className="text-xl font-medium text-foreground italic text-balance"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
+                      style={{ fontFamily: "'Libre Baskerville', serif" }}
                     >
                       &ldquo;{issue.quote}&rdquo;
                     </p>
@@ -231,7 +231,7 @@ export default function IssuesPage() {
             </span>
             <h2
               className="mt-3 text-4xl font-bold text-white text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               Stand behind these issues
             </h2>

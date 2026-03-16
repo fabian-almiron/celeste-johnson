@@ -26,7 +26,7 @@ export default function Nav() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[oklch(0.18_0.02_160)/0.97] shadow-lg shadow-black/20 backdrop-blur-md py-3'
+          ? 'bg-[oklch(0.14_0.06_255)]/95 shadow-lg shadow-black/20 backdrop-blur-md py-3'
           : 'bg-transparent py-5'
       }`}
     >
@@ -39,7 +39,7 @@ export default function Nav() {
         >
           <span
             className="text-white font-bold tracking-wide text-lg transition-opacity group-hover:opacity-80"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "'Libre Baskerville', serif" }}
           >
             Celeste Johnson
           </span>
@@ -87,7 +87,7 @@ export default function Nav() {
         aria-hidden={!open}
       >
         <nav
-          className="bg-[oklch(0.16_0.025_160)] border-t border-white/10 px-5 pt-4 pb-6 flex flex-col gap-1"
+          className="bg-[oklch(0.16_0.08_258)] border-t border-white/10 px-5 pt-4 pb-6 flex flex-col gap-1"
           aria-label="Mobile navigation"
         >
           {navLinks.map((link, i) => (

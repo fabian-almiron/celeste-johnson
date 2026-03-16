@@ -39,7 +39,7 @@ export default function GetInvolvedPage() {
             <h1
               id="get-involved-heading"
               className="mt-3 text-5xl lg:text-7xl font-bold text-white leading-tight text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               Get involved
               <br />
@@ -80,7 +80,7 @@ export default function GetInvolvedPage() {
               <h2
                 id="ways-to-help-heading"
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Every contribution counts
               </h2>
@@ -131,7 +131,7 @@ export default function GetInvolvedPage() {
                   </div>
                   <h3
                     className="text-lg font-semibold text-foreground mb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                   >
                     {item.title}
                   </h3>
@@ -161,7 +161,7 @@ export default function GetInvolvedPage() {
               <h2
                 id="volunteer-heading"
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Join the campaign team
               </h2>
@@ -200,7 +200,7 @@ export default function GetInvolvedPage() {
                   <div className="text-primary text-4xl mb-4">✓</div>
                   <h3
                     className="text-2xl font-bold text-foreground"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                   >
                     Thank you for signing up!
                   </h3>
@@ -218,7 +218,7 @@ export default function GetInvolvedPage() {
                 <>
                   <h3
                     className="text-xl font-semibold text-foreground mb-6"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    style={{ fontFamily: "'Libre Baskerville', serif" }}
                   >
                     Sign up to get involved
                   </h3>
@@ -348,7 +348,7 @@ export default function GetInvolvedPage() {
                 <h2
                   id="events-heading"
                   className="mt-3 text-4xl font-bold text-foreground text-balance"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  style={{ fontFamily: "'Libre Baskerville', serif" }}
                 >
                   Meet Celeste in your community
                 </h2>
@@ -395,7 +395,7 @@ export default function GetInvolvedPage() {
             <h2
               id="updates-heading"
               className="mt-3 text-4xl font-bold text-foreground text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               Stay connected to the campaign
             </h2>
@@ -443,7 +443,7 @@ export default function GetInvolvedPage() {
               <h2
                 id="contact-heading"
                 className="mt-3 text-4xl font-bold text-white text-balance"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Reach the campaign
               </h2>
@@ -484,7 +484,7 @@ export default function GetInvolvedPage() {
             <div className="bg-white/5 rounded-sm border border-white/10 p-8">
               <p
                 className="text-white font-semibold text-lg mb-2"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Media Inquiries
               </p>
@@ -494,7 +494,7 @@ export default function GetInvolvedPage() {
               </p>
               <p
                 className="text-white font-semibold text-lg mb-2"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
                 Endorsements & Organizations
               </p>
@@ -520,7 +520,7 @@ export default function GetInvolvedPage() {
           <div className="max-w-2xl mx-auto">
             <h2
               className="text-3xl font-bold text-white text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               Your involvement matters — so does your support
             </h2>

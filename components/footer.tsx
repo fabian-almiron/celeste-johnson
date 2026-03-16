@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <footer
-      className="bg-[oklch(0.14_0.02_160)] text-white/70"
+      className="bg-[oklch(0.14_0.06_255)] text-white/70"
       aria-label="Site footer"
     >
       {/* Top CTA band */}
@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <p
               className="text-2xl font-semibold text-white text-balance"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
               Ready to make a difference?
             </p>
@@ -43,7 +43,7 @@ export default function Footer() {
         <div className="col-span-1 sm:col-span-2 lg:col-span-1">
           <p
             className="text-white text-lg font-semibold"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "'Libre Baskerville', serif" }}
           >
             Celeste Johnson
           </p>
