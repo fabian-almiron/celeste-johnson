@@ -1,0 +1,12 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel deployment
+        run: curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_JxrAki167Wf2OgIzBjRfW80FMqC6/oa7O8260BE"
