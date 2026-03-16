@@ -20,10 +20,10 @@ export default function HomePage() {
             aria-hidden="true"
           >
             <img
-              src="/images/celeste-hero.jpg"
-              alt="Celeste Johnson standing outdoors in the Wasatch Back"
-              className="w-full h-full object-cover object-center"
-              style={{ objectPosition: '65% center' }}
+              src="/images/img_4549.jpg"
+              alt="Celeste Johnson standing confidently outdoors in the Wasatch Back"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: '70% center' }}
             />
             {/* Left-to-right gradient so text is readable without obscuring face */}
             <div
