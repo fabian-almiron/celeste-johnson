@@ -10,57 +10,71 @@ export default function HomePage() {
       <main>
         {/* ─── HERO ─── */}
         <section
-          className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+          className="relative min-h-screen flex items-end overflow-hidden"
           aria-labelledby="hero-headline"
+          style={{ background: 'oklch(0.14 0.06 255)' }}
         >
-          {/* Background image placeholder — replace with campaign photo */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('/placeholder.svg?height=1080&width=1920')`,
-            }}
-            aria-hidden="true"
-          />
-          {/* Dark overlay */}
+          {/* Celeste photo — right-anchored, full bleed */}
           <div
             className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(to bottom, oklch(0.12 0.025 165 / 0.75) 0%, oklch(0.14 0.02 160 / 0.85) 60%, oklch(0.14 0.02 160 / 0.95) 100%)',
-            }}
             aria-hidden="true"
-          />
+          >
+            <img
+              src="/images/celeste-hero.jpg"
+              alt="Celeste Johnson standing outdoors in the Wasatch Back"
+              className="w-full h-full object-cover object-center"
+              style={{ objectPosition: '65% center' }}
+            />
+            {/* Left-to-right gradient so text is readable without obscuring face */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  'linear-gradient(105deg, oklch(0.12 0.07 258 / 0.97) 0%, oklch(0.14 0.07 258 / 0.88) 38%, oklch(0.14 0.06 258 / 0.45) 62%, transparent 100%)',
+              }}
+            />
+            {/* Bottom fade for scroll legibility */}
+            <div
+              className="absolute bottom-0 left-0 right-0 h-48"
+              style={{
+                background:
+                  'linear-gradient(to top, oklch(0.14 0.06 255 / 0.85) 0%, transparent 100%)',
+              }}
+            />
+          </div>
 
-          {/* Hero content */}
-          <div className="relative z-10 text-center px-5 max-w-4xl mx-auto flex flex-col items-center">
-            <span className="inline-block text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-6 animate-fade-in">
-              Utah House District 59
-            </span>
-            <h1
-              id="hero-headline"
-              className="text-5xl sm:text-6xl lg:text-8xl font-bold text-white leading-none tracking-tight mb-6 animate-fade-up"
-              style={{ fontFamily: "'Libre Baskerville', serif" }}
-            >
-              Celeste
-              <br />
-              <span className="italic font-normal">Johnson</span>
-            </h1>
-            <p className="text-white/80 text-lg sm:text-xl max-w-xl mx-auto leading-relaxed mb-10 animate-fade-up delay-200">
-              Working for the Wasatch Back and the people who call it home.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
-              <Link
-                href="/donate"
-                className="px-8 py-3.5 rounded-sm text-sm font-semibold tracking-wide bg-accent text-accent-foreground hover:opacity-90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+          {/* Hero content — left-aligned, over the gradient */}
+          <div className="relative z-10 w-full px-5 pb-20 pt-40 max-w-7xl mx-auto">
+            <div className="max-w-xl">
+              <span className="inline-block text-accent text-xs font-semibold tracking-[0.22em] uppercase mb-5 animate-fade-in">
+                Utah House District 59
+              </span>
+              <h1
+                id="hero-headline"
+                className="text-6xl sm:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tight mb-6 animate-fade-up"
+                style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
-                Donate to the Campaign
-              </Link>
-              <Link
-                href="/get-involved"
-                className="px-8 py-3.5 rounded-sm text-sm font-semibold tracking-wide border border-white/40 text-white hover:bg-white/10 transition-colors duration-200"
-              >
-                Get Involved
-              </Link>
+                Celeste
+                <br />
+                <span className="italic font-normal">Johnson</span>
+              </h1>
+              <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-10 animate-fade-up delay-200">
+                Working for the Wasatch Back and the people who call it home.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
+                <Link
+                  href="/donate"
+                  className="px-8 py-3.5 rounded-sm text-sm font-semibold tracking-wide bg-accent text-accent-foreground hover:opacity-90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  Donate to the Campaign
+                </Link>
+                <Link
+                  href="/get-involved"
+                  className="px-8 py-3.5 rounded-sm text-sm font-semibold tracking-wide border border-white/40 text-white hover:bg-white/10 transition-colors duration-200"
+                >
+                  Get Involved
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -77,9 +91,10 @@ export default function HomePage() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-sm overflow-hidden bg-muted">
                 <img
-                  src="/placeholder.svg?height=750&width=600"
+                  src="/images/celeste-hero.jpg"
                   alt="Celeste Johnson, candidate for Utah House District 59"
                   className="w-full h-full object-cover"
+                  style={{ objectPosition: '70% top' }}
                 />
               </div>
               {/* Decorative accent */}
