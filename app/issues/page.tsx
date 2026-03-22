@@ -1,5 +1,6 @@
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
+import InternalHeroBackground from '@/components/internal-hero-background'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
@@ -97,23 +98,7 @@ export default function IssuesPage() {
           className="relative pt-36 pb-20 px-5 overflow-hidden"
           aria-labelledby="issues-heading"
         >
-          <div className="absolute inset-0" aria-hidden="true">
-            <Image
-              src="/images/hero.jpg"
-              alt=""
-              fill
-              priority
-              className="object-cover object-[70%_center]"
-              sizes="100vw"
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  'linear-gradient(105deg, oklch(0.12 0.07 258 / 0.94) 0%, oklch(0.16 0.09 258 / 0.88) 45%, oklch(0.18 0.09 258 / 0.82) 100%)',
-              }}
-            />
-          </div>
+          <InternalHeroBackground />
 
           <div className="relative z-10 max-w-7xl mx-auto">
             <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">

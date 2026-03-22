@@ -1,5 +1,6 @@
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
+import InternalHeroBackground from '@/components/internal-hero-background'
 import Link from 'next/link'
 import { ArrowRight, Quote } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -37,17 +38,9 @@ export default function WhyRunningPage() {
         {/* ─── HERO ─── */}
         <section
           className="relative pt-36 pb-24 px-5 overflow-hidden"
-          style={{ background: 'var(--section-dark)' }}
           aria-labelledby="why-running-heading"
         >
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage:
-                'radial-gradient(circle at 70% 50%, white 0%, transparent 60%)',
-            }}
-            aria-hidden="true"
-          />
+          <InternalHeroBackground />
           <div className="max-w-4xl mx-auto relative z-10">
             <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
               In Her Own Words

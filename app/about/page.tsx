@@ -1,5 +1,6 @@
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
+import InternalHeroBackground from '@/components/internal-hero-background'
 import AboutIntroVideo from '@/components/about-intro-video'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
@@ -56,9 +57,9 @@ export default function AboutPage() {
         {/* ─── PAGE HERO ─── */}
         <section
           className="relative pt-36 pb-20 px-5 overflow-hidden"
-          style={{ background: 'var(--section-dark)' }}
           aria-labelledby="about-heading"
         >
+          <InternalHeroBackground />
           {/* Decorative text */}
           <div
             className="absolute -right-8 top-10 text-[16rem] font-bold leading-none text-white/[0.03] select-none pointer-events-none hidden lg:block"

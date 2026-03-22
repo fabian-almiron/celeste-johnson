@@ -2,6 +2,7 @@
 
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
+import InternalHeroBackground from '@/components/internal-hero-background'
 import Link from 'next/link'
 import { useState } from 'react'
 import { ArrowRight, Mail, Calendar, MessageSquare, Users } from 'lucide-react'
@@ -28,11 +29,11 @@ export default function GetInvolvedPage() {
       <main>
         {/* ─── HERO ─── */}
         <section
-          className="relative pt-36 pb-20 px-5"
-          style={{ background: 'var(--section-dark)' }}
+          className="relative pt-36 pb-20 px-5 overflow-hidden"
           aria-labelledby="get-involved-heading"
         >
-          <div className="max-w-7xl mx-auto">
+          <InternalHeroBackground />
+          <div className="max-w-7xl mx-auto relative z-10">
             <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
               Join the Campaign
             </span>

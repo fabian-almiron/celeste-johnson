@@ -1,5 +1,6 @@
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
+import InternalHeroBackground from '@/components/internal-hero-background'
 import Link from 'next/link'
 import { Shield, ArrowRight, Users, Mountain, Home } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -38,18 +39,10 @@ export default function DonatePage() {
       <main>
         {/* ─── HERO ─── */}
         <section
-          className="relative pt-36 pb-20 px-5"
-          style={{ background: 'var(--section-dark)' }}
+          className="relative pt-36 pb-20 px-5 overflow-hidden"
           aria-labelledby="donate-heading"
         >
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage:
-                'radial-gradient(ellipse at 80% 50%, white 0%, transparent 55%)',
-            }}
-            aria-hidden="true"
-          />
+          <InternalHeroBackground />
           <div className="max-w-7xl mx-auto relative z-10">
             <div>
               <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
