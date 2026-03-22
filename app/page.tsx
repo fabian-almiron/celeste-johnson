@@ -1,7 +1,17 @@
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mountain, TreePine, Users, Home, ChevronDown, ArrowRight, Quote } from 'lucide-react'
+
+type HomeIssuePreview = {
+  number: string
+  title: string
+  body: string
+  href: string
+  imageAlt: string
+  imageSrc?: string
+}
 
 export default function HomePage() {
   return (
@@ -20,8 +30,8 @@ export default function HomePage() {
             aria-hidden="true"
           >
             <img
-              src="/images/img_4549.jpg"
-              alt="Celeste Johnson standing confidently outdoors in the Wasatch Back"
+              src="/images/hero.jpg"
+              alt="Celeste Johnson smiling outdoors beside an evergreen tree in the Wasatch Back"
               className="w-full h-full object-cover"
               style={{ objectPosition: '70% center' }}
             />
@@ -46,8 +56,8 @@ export default function HomePage() {
           {/* Hero content — left-aligned, over the gradient */}
           <div className="relative z-10 w-full px-5 pb-20 pt-40 max-w-7xl mx-auto">
             <div className="max-w-xl">
-              <span className="inline-block text-accent text-xs font-semibold tracking-[0.22em] uppercase mb-5 animate-fade-in">
-                Utah House District 59
+              <span className="inline-block text-white text-xs font-semibold tracking-[0.22em] uppercase mb-5 animate-fade-in">
+                Your Neighbor
               </span>
               <h1
                 id="hero-headline"
@@ -58,6 +68,10 @@ export default function HomePage() {
                 <br />
                 <span className="italic font-normal">Johnson</span>
               </h1>
+          
+              <span className="inline-block text-white text-xs font-semibold tracking-[0.22em] uppercase mb-5 animate-fade-in">
+              For house district 59
+              </span>
               <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-10 animate-fade-up delay-200">
                 Working for the Wasatch Back and the people who call it home.
               </p>
@@ -89,12 +103,11 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
             {/* Photo placeholder */}
             <div className="relative">
-              <div className="aspect-[4/5] rounded-sm overflow-hidden bg-muted">
+              <div className="aspect-auto rounded-sm overflow-hidden bg-muted">
                 <img
-                  src="https://t3.storageapi.dev/convenient-matchbox-rws-pv/chat-images/f02df67c-5fe6-4fa1-b03e-370e33825d79-celestejohnson2025-76.jpg"
-                  alt="Celeste Johnson, candidate for Utah House District 59 — official portrait"
+                  src="/images/about-celeste-2.jpg"
+                  alt="Celeste Johnson with family in a Wasatch Back barn"
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center top' }}
                 />
               </div>
               {/* Decorative accent */}
@@ -223,10 +236,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ─── KEY ISSUES PREVIEW ─── */}
+        {/* ─── KEY ISSUES PREVIEW (image-forward) ─── */}
         <section className="py-20 lg:py-28 px-5 bg-background">
           <div className="max-w-7xl mx-auto">
-            <div className="max-w-2xl mb-16">
+            <div className="max-w-2xl mb-14 lg:mb-16">
               <span className="text-primary text-xs font-semibold tracking-[0.18em] uppercase">
                 The Issues
               </span>
@@ -243,62 +256,100 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
-              {[
+            <div className="flex flex-col gap-6 lg:gap-8">
+              {([
                 {
                   number: '01',
                   title: 'Protecting Farms, Open Spaces & Community Character',
                   body: "The Wasatch Back is defined by its working farms, open land, and small-town character. Once those are gone, they're gone for good.",
                   href: '/issues#farms',
+                  imageAlt: 'Open farmland and Wasatch Back landscape',
                 },
                 {
                   number: '02',
                   title: 'Local Voices, Local Choices',
                   body: "Communities should solve problems locally, with the people who understand the impacts best. State-level decisions shouldn't override that.",
                   href: '/issues#local',
+                  imageAlt: 'Neighbors and local community gathering',
                 },
                 {
                   number: '03',
                   title: 'Housing Affordability That Actually Works',
                   body: 'Housing affordability on the Wasatch Back is unique. Building more units alone won\'t solve the problem if those homes aren\'t accessible to working families.',
                   href: '/issues#housing',
+                  imageAlt: 'Homes and neighborhoods in the Wasatch Back',
                 },
                 {
                   number: '04',
                   title: 'Strong Communities, Healthy Families',
                   body: 'Strong communities are built when families feel safe, supported, and able to thrive — and when government plays a responsible, practical role.',
                   href: '/issues#community',
+                  imageAlt: 'Families and community life',
                 },
-              ].map((issue) => (
+              ] as readonly HomeIssuePreview[]).map((issue, index) => (
                 <Link
                   key={issue.number}
                   href={issue.href}
-                  className="group relative p-8 rounded-sm border border-border hover:border-primary/40 hover:shadow-lg bg-card transition-all duration-300 overflow-hidden"
+                  className="group grid lg:grid-cols-2 gap-0 rounded-sm border border-border overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all duration-300 bg-card"
                 >
-                  <span
-                    className="absolute top-5 right-6 text-5xl font-bold text-border group-hover:text-primary/10 transition-colors duration-300"
-                    style={{ fontFamily: "'Libre Baskerville', serif" }}
-                    aria-hidden="true"
+                  <div
+                    className={`relative aspect-16/10 lg:aspect-auto lg:min-h-[min(36vw,22rem)] ${
+                      index % 2 === 1 ? 'lg:order-2' : ''
+                    }`}
                   >
-                    {issue.number}
-                  </span>
-                  <h3
-                    className="text-xl font-semibold text-foreground mb-3 text-balance pr-12"
-                    style={{ fontFamily: "'Libre Baskerville', serif" }}
+                    {issue.imageSrc ? (
+                      <Image
+                        src={issue.imageSrc}
+                        alt={issue.imageAlt}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                    ) : (
+                      <div
+                        className="absolute inset-0 bg-linear-to-br from-muted via-muted/90 to-secondary/25 flex flex-col items-center justify-center gap-2 text-muted-foreground px-6 text-center"
+                        aria-hidden="true"
+                      >
+                        <span className="text-[0.65rem] font-semibold tracking-[0.2em] uppercase">
+                          Photo placeholder
+                        </span>
+                        <span className="text-xs opacity-75 max-w-56 font-body">
+                          Add <code className="text-[0.7rem] bg-background/70 px-1 py-0.5 rounded">imageSrc</code> for issue {issue.number} (e.g.{' '}
+                          <code className="text-[0.7rem] bg-background/70 px-1 py-0.5 rounded">/images/issues/01.jpg</code>).
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <div
+                    className={`relative p-8 lg:p-10 flex flex-col justify-center ${
+                      index % 2 === 1 ? 'lg:order-1' : ''
+                    }`}
                   >
-                    {issue.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {issue.body}
-                  </p>
-                  <span className="mt-5 inline-flex items-center gap-1.5 text-primary text-sm font-medium group-hover:gap-3 transition-all duration-200">
-                    Read more <ArrowRight size={14} />
-                  </span>
+                    <span
+                      className="absolute top-6 right-6 lg:top-8 lg:right-8 text-5xl font-bold text-border group-hover:text-primary/15 transition-colors duration-300"
+                      style={{ fontFamily: "'Libre Baskerville', serif" }}
+                      aria-hidden="true"
+                    >
+                      {issue.number}
+                    </span>
+                    <h3
+                      className="text-xl font-semibold text-foreground mb-3 text-balance pr-14"
+                      style={{ fontFamily: "'Libre Baskerville', serif" }}
+                    >
+                      {issue.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {issue.body}
+                    </p>
+                    <span className="mt-6 inline-flex items-center gap-1.5 text-primary text-sm font-medium group-hover:gap-3 transition-all duration-200">
+                      Read more <ArrowRight size={14} />
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>
 
-            <div className="mt-10 text-center">
+            <div className="mt-12 text-center">
               <Link
                 href="/issues"
                 className="inline-flex items-center gap-2 px-7 py-3 rounded-sm border border-primary text-primary font-semibold text-sm hover:bg-primary hover:text-primary-foreground transition-all duration-200"

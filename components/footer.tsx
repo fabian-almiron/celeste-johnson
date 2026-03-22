@@ -41,15 +41,19 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-5 py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* Brand */}
         <div className="col-span-1 sm:col-span-2 lg:col-span-1">
-          <p
-            className="text-white text-lg font-semibold"
-            style={{ fontFamily: "'Libre Baskerville', serif" }}
+          <Link
+            href="/"
+            className="inline-block group mb-4"
+            aria-label="Celeste Johnson for Utah House District 59 — Home"
           >
-            Celeste Johnson
-          </p>
-          <p className="text-white/50 text-xs tracking-widest uppercase mt-0.5 mb-4">
-            Utah House District 59
-          </p>
+            <img
+              src="/images/footer-logo.svg"
+              alt=""
+              width={1168}
+              height={298}
+              className="h-10 w-auto sm:h-11 opacity-90 group-hover:opacity-100 transition-opacity"
+            />
+          </Link>
           <p className="text-sm text-white/55 leading-relaxed">
             Working for the Wasatch Back and the people who call it home.
           </p>

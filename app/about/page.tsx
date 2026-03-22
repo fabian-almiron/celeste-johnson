@@ -105,7 +105,7 @@ export default function AboutPage() {
             </div>
             {/* Bio text */}
             <div className="lg:col-span-3">
-              <p className="text-xl text-foreground font-medium leading-relaxed">
+              <p className="text-[40px] text-foreground font-semibold leading-tight">
                 Celeste has called the Wasatch Back home for decades, building
                 her life here long before running for public office.
               </p>

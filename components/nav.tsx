@@ -34,18 +34,16 @@ export default function Nav() {
         {/* Logo / Name */}
         <Link
           href="/"
-          className="flex flex-col leading-tight group"
+          className="group flex shrink-0 items-center"
           aria-label="Celeste Johnson for Utah House District 59 — Home"
         >
-          <span
-            className="text-white font-bold tracking-wide text-lg transition-opacity group-hover:opacity-80"
-            style={{ fontFamily: "'Libre Baskerville', serif" }}
-          >
-            Celeste Johnson
-          </span>
-          <span className="text-white/60 text-xs font-light tracking-widest uppercase">
-            Utah House District 59
-          </span>
+          <img
+            src="/images/logo.svg"
+            alt=""
+            width={1168}
+            height={298}
+            className="h-9 w-auto sm:h-10 md:h-11 transition-opacity group-hover:opacity-80 logo-image"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -54,7 +52,7 @@ export default function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-white/80 hover:text-white text-sm font-medium tracking-wide transition-colors duration-200 relative group"
+              className="font-body text-base font-bold text-white/80 hover:text-white tracking-wide transition-colors duration-200 relative group"
             >
               {link.label}
               <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
@@ -62,7 +60,7 @@ export default function Nav() {
           ))}
           <Link
             href="/donate"
-            className="ml-2 px-5 py-2 rounded-sm text-sm font-semibold tracking-wide transition-all duration-200 bg-accent text-accent-foreground hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
+            className="ml-2 px-5 py-2 rounded-sm font-body text-base font-bold tracking-wide transition-all duration-200 bg-accent text-accent-foreground hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
           >
             Donate
           </Link>
@@ -95,7 +93,7 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="text-white/85 hover:text-white py-3 text-base font-medium border-b border-white/10 last:border-0 transition-colors"
+              className="font-body text-base font-bold text-white/85 hover:text-white py-3 border-b border-white/10 last:border-0 transition-colors"
               style={{ animationDelay: `${i * 60}ms` }}
             >
               {link.label}
@@ -104,7 +102,7 @@ export default function Nav() {
           <Link
             href="/donate"
             onClick={() => setOpen(false)}
-            className="mt-4 px-5 py-3 rounded-sm text-center text-sm font-semibold tracking-wide bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
+            className="mt-4 px-5 py-3 rounded-sm text-center font-body text-base font-bold tracking-wide bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
           >
             Donate Now
           </Link>
