@@ -256,8 +256,8 @@ export default function WhyRunningPage() {
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
             <div className="aspect-[4/3] rounded-sm overflow-hidden bg-muted">
               <img
-                src="/placeholder.svg?height=600&width=800"
-                alt="Wasatch Back landscape — the community Celeste is fighting to protect"
+                src="/images/family-pic.jpg"
+                alt="Celeste Johnson with her extended family outdoors, multi-generational portrait in front of a large pine tree"
                 className="w-full h-full object-cover"
               />
             </div>

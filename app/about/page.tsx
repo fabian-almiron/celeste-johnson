@@ -1,5 +1,6 @@
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
+import AboutIntroVideo from '@/components/about-intro-video'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -91,17 +92,10 @@ export default function AboutPage() {
 
         {/* ─── INTRO WITH PHOTO ─── */}
         <section className="py-20 lg:py-28 px-5 bg-background">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-14 items-start">
-            {/* Photo */}
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-5 gap-14 lg:items-center">
+            {/* Video (click to play) */}
             <div className="lg:col-span-2 relative">
-              <div className="aspect-[3/4] rounded-sm overflow-hidden bg-muted sticky top-28">
-                <img
-                  src="/images/celeste-community.jpg"
-                  alt="Celeste Johnson with local farmers and community members in a Wasatch Back barn"
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center top' }}
-                />
-              </div>
+              <AboutIntroVideo />
             </div>
             {/* Bio text */}
             <div className="lg:col-span-3">

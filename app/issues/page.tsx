@@ -15,7 +15,7 @@ const issues = [
   {
     id: 'farms',
     number: '01',
-    imageSrc: '/images/img_4802.jpg',
+    imageSrc: '/images/farms-open-spaces.jpg',
     imageAlt:
       'Open landscape and mountain views in the Wasatch Back, reflecting farmland and community character',
     title: 'Protecting Farms, Open Spaces & Community Character',
@@ -34,8 +34,9 @@ const issues = [
   {
     id: 'local',
     number: '02',
-    imageSrc: '/images/img_4549.jpg',
-    imageAlt: 'Community and outdoor life on the Wasatch Back',
+    imageSrc: '/images/local-comunity.jpg',
+    imageAlt:
+      'Local leaders and neighbors celebrating a Wasatch Back community project',
     title: 'Local Voices, Local Choices',
     subhead: 'Who Is At The Table Matters',
     body: [
@@ -51,8 +52,8 @@ const issues = [
   {
     id: 'housing',
     number: '03',
-    imageSrc: '/images/img_4545.jpg',
-    imageAlt: 'Neighborhoods and homes in a mountain community',
+    imageSrc: '/images/housing-placeholder.jpg',
+    imageAlt: 'Thoughtful planning for housing and community policy',
     title: 'Housing Affordability That Actually Works',
     subhead: 'How We Measure Outcomes',
     body: [
@@ -69,8 +70,8 @@ const issues = [
   {
     id: 'community',
     number: '04',
-    imageSrc: '/images/about-celeste-2.jpg',
-    imageAlt: 'Celeste Johnson with community members',
+    imageSrc: '/images/communities.jpg',
+    imageAlt: 'Community support and local service on the Wasatch Back',
     title: 'Strong Communities, Healthy Families',
     subhead: 'Community Wellbeing Without Culture Wars',
     body: [

@@ -263,6 +263,7 @@ export default function HomePage() {
                   title: 'Protecting Farms, Open Spaces & Community Character',
                   body: "The Wasatch Back is defined by its working farms, open land, and small-town character. Once those are gone, they're gone for good.",
                   href: '/issues#farms',
+                  imageSrc: '/images/farms-open-spaces.jpg',
                   imageAlt: 'Open farmland and Wasatch Back landscape',
                 },
                 {
@@ -270,6 +271,7 @@ export default function HomePage() {
                   title: 'Local Voices, Local Choices',
                   body: "Communities should solve problems locally, with the people who understand the impacts best. State-level decisions shouldn't override that.",
                   href: '/issues#local',
+                  imageSrc: '/images/local-comunity.jpg',
                   imageAlt: 'Neighbors and local community gathering',
                 },
                 {
@@ -277,6 +279,7 @@ export default function HomePage() {
                   title: 'Housing Affordability That Actually Works',
                   body: 'Housing affordability on the Wasatch Back is unique. Building more units alone won\'t solve the problem if those homes aren\'t accessible to working families.',
                   href: '/issues#housing',
+                  imageSrc: '/images/housing-placeholder.jpg',
                   imageAlt: 'Homes and neighborhoods in the Wasatch Back',
                 },
                 {
@@ -284,6 +287,7 @@ export default function HomePage() {
                   title: 'Strong Communities, Healthy Families',
                   body: 'Strong communities are built when families feel safe, supported, and able to thrive — and when government plays a responsible, practical role.',
                   href: '/issues#community',
+                  imageSrc: '/images/communities.jpg',
                   imageAlt: 'Families and community life',
                 },
               ] as readonly HomeIssuePreview[]).map((issue, index) => (

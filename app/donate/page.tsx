@@ -50,7 +50,7 @@ export default function DonatePage() {
             }}
             aria-hidden="true"
           />
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="max-w-7xl mx-auto relative z-10">
             <div>
               <span className="text-accent text-xs font-semibold tracking-[0.18em] uppercase">
                 Support the Campaign
@@ -71,14 +71,6 @@ export default function DonatePage() {
                 House District 59 helps bring thoughtful, community-first
                 leadership to the people who need it most.
               </p>
-            </div>
-            <div className="relative aspect-[3/2] rounded-sm overflow-hidden">
-              <img
-                src="/placeholder.svg?height=600&width=900"
-                alt="Celeste Johnson meeting with community members in the Wasatch Back"
-                className="w-full h-full object-cover opacity-60"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </div>
           </div>
         </section>

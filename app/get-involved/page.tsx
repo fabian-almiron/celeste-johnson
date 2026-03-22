@@ -373,8 +373,8 @@ export default function GetInvolvedPage() {
               </div>
               <div className="aspect-[4/3] rounded-sm overflow-hidden bg-muted">
                 <img
-                  src="/placeholder.svg?height=600&width=800"
-                  alt="Community gathering in the Wasatch Back"
+                  src="/images/evets-radio.jpg"
+                  alt="Celeste Johnson in the KPCW community radio studio"
                   className="w-full h-full object-cover"
                 />
               </div>
