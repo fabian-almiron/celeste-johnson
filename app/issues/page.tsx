@@ -7,13 +7,56 @@ import { ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Issues | Celeste Johnson for Utah House District 59',
+  title: 'District 59 Policy Positions: Open Space, Housing, Local Control',
   description:
-    "Celeste Johnson's policy positions on land conservation, local decision-making, housing affordability, and community wellbeing for the Wasatch Back.",
+    "Celeste Johnson's District 59 policy positions: open space preservation, affordable housing, local control, smart growth, transparent government.",
   alternates: {
     canonical: 'https://celestefordistrict59.com/issues',
   },
+  openGraph: {
+    title: 'District 59 Policy Positions: Open Space, Housing, Local Control',
+    description:
+      "Celeste Johnson's policy positions on open space, affordable housing, local control, smart growth, and transparent government.",
+    type: 'website',
+    url: 'https://celestefordistrict59.com/issues',
+    images: [
+      {
+        url: '/images/farms-open-spaces.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'District 59 Policy Positions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'District 59 Policy Positions',
+    description:
+      "Celeste Johnson's positions on open space, affordable housing, local control, and transparent government.",
+    images: ['/images/farms-open-spaces.jpg'],
+  },
 }
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://celestefordistrict59.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Policy Positions',
+        item: 'https://celestefordistrict59.com/issues',
+      },
+    ],
+  },
+]
 
 const issues = [
   {
@@ -94,6 +137,13 @@ const issues = [
 export default function IssuesPage() {
   return (
     <>
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Nav />
       <main>
         {/* ─── HERO ─── */}
@@ -112,10 +162,10 @@ export default function IssuesPage() {
               className="mt-3 text-5xl lg:text-7xl font-bold text-white leading-tight text-balance"
               style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
-              The issues that
+              District 59 Policy Priorities
               <br />
               <span className="italic font-normal text-white/70">
-                define this race
+                Open Space, Housing, Leadership
               </span>
             </h1>
             <p className="mt-6 text-white/65 text-lg max-w-2xl leading-relaxed">

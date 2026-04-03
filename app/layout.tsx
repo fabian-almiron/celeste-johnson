@@ -17,17 +17,20 @@ const sourceSans = Source_Sans_3({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://celestefordistrict59.com'),
-  title: 'Celeste Johnson for Utah House District 59',
+  title: 'Celeste Johnson for Utah House District 59 | District 59 Candidate',
   description:
-    'Celeste Johnson is running for Utah House District 59 to bring local voices, land stewardship, and community-first leadership to the Wasatch Back.',
+    'Vote Celeste Johnson for Utah House District 59. Former two-term Midway Mayor supporting open space preservation, local control, and affordable housing. Learn her vision for the Wasatch Back.',
   keywords: [
     'Celeste Johnson',
     'Utah House District 59',
+    'District 59 candidate',
     'Wasatch Back',
-    'Midway Utah',
+    'Midway Mayor',
+    'open space preservation',
+    'local control',
+    'affordable housing',
+    'smart growth',
     'local leadership',
-    'land conservation',
-    'housing affordability',
   ],
   alternates: {
     canonical: 'https://celestefordistrict59.com',
@@ -35,9 +38,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Celeste Johnson for Utah House District 59',
     description:
-      'Working for the Wasatch Back and the people who call it home.',
+      'Vote Celeste Johnson for Utah House District 59. Former Midway Mayor supporting open space, local control, and affordable housing.',
     type: 'website',
-    images: [{ url: '/images/hero.jpg', width: 1200, height: 630 }],
+    url: 'https://celestefordistrict59.com',
+    images: [
+      {
+        url: '/images/hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Celeste Johnson for Utah House District 59',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Celeste Johnson for Utah House District 59',
+    description:
+      'Vote Celeste Johnson for Utah House District 59. Former Midway Mayor supporting open space, local control, and affordable housing.',
+    images: ['/images/hero.jpg'],
   },
 }
 

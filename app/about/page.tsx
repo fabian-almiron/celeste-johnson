@@ -7,11 +7,33 @@ import { ArrowRight, CheckCircle } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Celeste Johnson | Utah House District 59',
+  title: "Celeste Johnson's Leadership Background | District 59 Mayor Candidate",
   description:
-    'Learn about Celeste Johnson — former two-term mayor of Midway, community leader, and candidate for Utah House District 59.',
+    '8+ years as Midway Mayor. Celeste Johnson championed open space, smart growth, and transparent leadership. Why experienced local leaders change communities.',
   alternates: {
     canonical: 'https://celestefordistrict59.com/about',
+  },
+  openGraph: {
+    title: "Celeste Johnson's Leadership Background | District 59 Mayor Candidate",
+    description:
+      '8+ years as Midway Mayor. Celeste Johnson championed open space, smart growth, and transparent leadership.',
+    type: 'website',
+    url: 'https://celestefordistrict59.com/about',
+    images: [
+      {
+        url: '/images/about-celeste-2.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Celeste Johnson with family',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Celeste Johnson's Leadership Background",
+    description:
+      '8+ years as Midway Mayor. Celeste Johnson championed open space, smart growth, and transparent leadership.',
+    images: ['/images/about-celeste-2.jpg'],
   },
 }
 
@@ -52,25 +74,57 @@ const values = [
   'Deep commitment to the people of the Wasatch Back',
 ]
 
-const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': ['Person', 'PoliticalCandidate'],
-  name: 'Celeste Johnson',
-  url: 'https://celestefordistrict59.com',
-  sameAs: [],
-  seeksCandidacy: {
-    '@type': 'GovernmentOrganization',
-    name: 'Utah House of Representatives District 59',
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': ['Person', 'PoliticalCandidate'],
+    name: 'Celeste Johnson',
+    url: 'https://celestefordistrict59.com',
+    image: 'https://celestefordistrict59.com/images/about-celeste-2.jpg',
+    jobTitle: 'Former Mayor of Midway, Candidate for Utah House District 59',
+    description:
+      'Two-term former mayor of Midway with 8+ years of local leadership. Celeste Johnson is a fierce advocate for the people and spaces of the Wasatch Back.',
+    areaServed: 'Utah House District 59',
+    worksFor: {
+      '@type': 'GovernmentOrganization',
+      name: 'City of Midway',
+    },
+    sameAs: [],
+    seeksCandidacy: {
+      '@type': 'GovernmentOrganization',
+      name: 'Utah House of Representatives District 59',
+    },
   },
-}
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://celestefordistrict59.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'About',
+        item: 'https://celestefordistrict59.com/about',
+      },
+    ],
+  },
+]
 
 export default function AboutPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Nav />
       <main>
         {/* ─── PAGE HERO ─── */}
@@ -96,10 +150,10 @@ export default function AboutPage() {
               className="mt-3 text-5xl lg:text-7xl font-bold text-white leading-tight text-balance"
               style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
-              Celeste Johnson
+              About Celeste Johnson
               <br />
               <span className="italic font-normal text-white/70">
-                A life built in service and community
+                District 59 Leadership
               </span>
             </h1>
             <p className="mt-6 text-white/65 text-lg max-w-2xl leading-relaxed">
@@ -165,7 +219,7 @@ export default function AboutPage() {
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
-                A record of showing up
+                Mayor of Midway: 8 Years of Local Leadership
               </h2>
             </div>
 
@@ -220,7 +274,7 @@ export default function AboutPage() {
                   className="mt-3 text-4xl font-bold text-foreground text-balance"
                   style={{ fontFamily: "'Libre Baskerville', serif" }}
                 >
-                  What her leadership delivered
+                  Achievements in Open Space & Leadership
                 </h2>
                 <p className="mt-5 text-muted-foreground leading-relaxed">
                   As mayor of Midway, Celeste helped the community plan

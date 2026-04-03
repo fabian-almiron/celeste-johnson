@@ -6,8 +6,33 @@ import Image from 'next/image'
 import { Mountain, TreePine, Users, Home, ChevronDown, ArrowRight, Quote } from 'lucide-react'
 
 export const metadata: Metadata = {
+  title: 'Celeste Johnson for Utah House District 59 | District 59 Candidate',
+  description:
+    'Vote Celeste Johnson for Utah House District 59. Former Midway Mayor supporting open space, local control, and affordable housing. Learn her vision.',
   alternates: {
     canonical: 'https://celestefordistrict59.com',
+  },
+  openGraph: {
+    title: 'Celeste Johnson for Utah House District 59',
+    description:
+      'Vote Celeste Johnson for Utah House District 59. Former Midway Mayor supporting open space, local control, and affordable housing.',
+    type: 'website',
+    url: 'https://celestefordistrict59.com',
+    images: [
+      {
+        url: '/images/hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Celeste Johnson for Utah House District 59',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Celeste Johnson for Utah House District 59',
+    description:
+      'Vote Celeste Johnson for Utah House District 59. Former Midway Mayor supporting open space, local control, and affordable housing.',
+    images: ['/images/hero.jpg'],
   },
 }
 
@@ -20,25 +45,60 @@ type HomeIssuePreview = {
   imageSrc?: string
 }
 
-const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': ['Person', 'PoliticalCandidate'],
-  name: 'Celeste Johnson',
-  url: 'https://celestefordistrict59.com',
-  sameAs: [],
-  seeksCandidacy: {
-    '@type': 'GovernmentOrganization',
-    name: 'Utah House of Representatives District 59',
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': ['Person', 'PoliticalCandidate'],
+    name: 'Celeste Johnson',
+    url: 'https://celestefordistrict59.com',
+    image: 'https://celestefordistrict59.com/images/hero.jpg',
+    jobTitle: 'Candidate for Utah House District 59',
+    description:
+      'Celeste Johnson is the former two-term mayor of Midway and candidate for Utah House District 59, championing open space preservation, local control, and affordable housing.',
+    areaServed: 'Utah House District 59',
+    sameAs: [],
+    seeksCandidacy: {
+      '@type': 'GovernmentOrganization',
+      name: 'Utah House of Representatives District 59',
+    },
   },
-}
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Celeste Johnson for Utah House District 59',
+    description:
+      'Campaign for Celeste Johnson, candidate for Utah House District 59. Former Midway Mayor supporting open space, local control, and affordable housing.',
+    url: 'https://celestefordistrict59.com',
+    image: 'https://celestefordistrict59.com/images/hero.jpg',
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: 'Utah House District 59',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://celestefordistrict59.com',
+      },
+    ],
+  },
+]
 
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Nav />
       <main>
         {/* ─── HERO ─── */}
@@ -149,20 +209,13 @@ export default function HomePage() {
                 className="mt-3 text-4xl lg:text-5xl font-bold text-foreground leading-tight text-balance"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
-                A life built in the{' '}
-                <span className="italic">Wasatch Back</span>
+                Serving Utah House District 59
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
-                Celeste Johnson is the former two-term mayor of Midway, a wife,
-                mother of four, and a fierce advocate for the people and spaces
-                that make the Wasatch Back home.
+                Celeste Johnson is the former two-term mayor of Midway with 8+ years of local leadership experience. She is a wife, mother of four, and a fierce advocate for the people and spaces that make the Wasatch Back home. Her tenure as Midway Mayor was marked by open space preservation, smart growth planning, and transparent leadership that earned her unopposed re-election.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                She is running for Utah House District 59 to center local
-                voices in decision-making, protect the character of our
-                communities, and make sure growth and land-use policies work
-                for the people who live and work here — not developers at the
-                state legislature.
+                She is running for Utah House District 59 — representing the communities of Midway, Oakley, and surrounding areas — to center local voices in decision-making, protect the character of our communities, and make sure growth and land-use policies work for the people who live and work here. Celeste believes local control, open space preservation, affordable housing solutions, and transparent government are essential to the Wasatch Back's future.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
@@ -196,11 +249,10 @@ export default function HomePage() {
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
-                Proven leadership. Local roots.
+                Proven Leadership. Local Roots. District 59 Ready.
               </h2>
               <p className="mt-4 text-muted-foreground">
-                Two terms as mayor. A career built in service. Experience
-                that speaks for itself.
+                Eight years as mayor of Midway. A career built in service to the Wasatch Back. Experience that has earned community trust and delivered results for open space, local control, and transparent leadership.
               </p>
             </div>
 
@@ -270,12 +322,10 @@ export default function HomePage() {
                 className="mt-3 text-4xl font-bold text-foreground text-balance"
                 style={{ fontFamily: "'Libre Baskerville', serif" }}
               >
-                What Celeste is fighting for
+                District 59 Policy Priorities: Open Space, Housing, Local Control
               </h2>
               <p className="mt-4 text-muted-foreground max-w-xl">
-                From protecting working farms to ensuring housing policy
-                reflects local reality, these are the issues that define this
-                race.
+                From protecting working farms and open space preservation to ensuring housing policy reflects local reality and championing local control, these are the core issues that define Celeste's campaign for Utah House District 59.
               </p>
             </div>
 
