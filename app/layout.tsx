@@ -16,6 +16,7 @@ const sourceSans = Source_Sans_3({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://celestefordistrict59.com'),
   title: 'Celeste Johnson for Utah House District 59',
   description:
     'Celeste Johnson is running for Utah House District 59 to bring local voices, land stewardship, and community-first leadership to the Wasatch Back.',
@@ -28,11 +29,15 @@ export const metadata: Metadata = {
     'land conservation',
     'housing affordability',
   ],
+  alternates: {
+    canonical: 'https://celestefordistrict59.com',
+  },
   openGraph: {
     title: 'Celeste Johnson for Utah House District 59',
     description:
       'Working for the Wasatch Back and the people who call it home.',
     type: 'website',
+    images: [{ url: '/images/hero.jpg', width: 1200, height: 630 }],
   },
 }
 

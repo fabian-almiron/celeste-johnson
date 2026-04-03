@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'Donate | Celeste Johnson for Utah House District 59',
   description:
     "Support Celeste Johnson's campaign for Utah House District 59. Help bring thoughtful, community-first leadership to the Wasatch Back.",
+  alternates: {
+    canonical: 'https://celestefordistrict59.com/donate',
+  },
 }
 
 const reasons = [

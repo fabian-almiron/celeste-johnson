@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'Issues | Celeste Johnson for Utah House District 59',
   description:
     "Celeste Johnson's policy positions on land conservation, local decision-making, housing affordability, and community wellbeing for the Wasatch Back.",
+  alternates: {
+    canonical: 'https://celestefordistrict59.com/issues',
+  },
 }
 
 const issues = [

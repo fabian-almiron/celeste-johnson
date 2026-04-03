@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: 'About Celeste Johnson | Utah House District 59',
   description:
     'Learn about Celeste Johnson — former two-term mayor of Midway, community leader, and candidate for Utah House District 59.',
+  alternates: {
+    canonical: 'https://celestefordistrict59.com/about',
+  },
 }
 
 const timeline = [
@@ -49,9 +52,25 @@ const values = [
   'Deep commitment to the people of the Wasatch Back',
 ]
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['Person', 'PoliticalCandidate'],
+  name: 'Celeste Johnson',
+  url: 'https://celestefordistrict59.com',
+  sameAs: [],
+  seeksCandidacy: {
+    '@type': 'GovernmentOrganization',
+    name: 'Utah House of Representatives District 59',
+  },
+}
+
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <Nav />
       <main>
         {/* ─── PAGE HERO ─── */}
@@ -77,10 +96,10 @@ export default function AboutPage() {
               className="mt-3 text-5xl lg:text-7xl font-bold text-white leading-tight text-balance"
               style={{ fontFamily: "'Libre Baskerville', serif" }}
             >
-              A life built in
+              Celeste Johnson
               <br />
               <span className="italic font-normal text-white/70">
-                service and community
+                A life built in service and community
               </span>
             </h1>
             <p className="mt-6 text-white/65 text-lg max-w-2xl leading-relaxed">

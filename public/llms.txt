@@ -1,0 +1,12 @@
+# Celeste Johnson for Utah House District 59
+
+Celeste Johnson is a candidate for the Utah House of Representatives, District 59.
+This website provides information about her campaign, platform, values, and how to get involved or donate.
+
+## Pages
+- / — Homepage: campaign overview and key issues
+- /about — About Celeste: background, biography, and values
+- /why-im-running — Why she's running: Celeste's motivation and vision for the Wasatch Back
+- /issues — Issues: policy positions on land conservation, housing, and community
+- /get-involved — Get Involved: volunteer, attend events, and join the campaign
+- /donate — Donate: support the campaign financially

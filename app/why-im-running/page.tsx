@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Why I'm Running | Celeste Johnson for Utah House District 59",
   description:
     "In her own words: why Celeste Johnson is running for Utah House District 59 and what she hopes to accomplish for the Wasatch Back.",
+  alternates: {
+    canonical: 'https://celestefordistrict59.com/why-im-running',
+  },
 }
 
 const motivations = [

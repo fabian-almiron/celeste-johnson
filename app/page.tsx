@@ -1,8 +1,15 @@
+import type { Metadata } from 'next'
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Mountain, TreePine, Users, Home, ChevronDown, ArrowRight, Quote } from 'lucide-react'
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://celestefordistrict59.com',
+  },
+}
 
 type HomeIssuePreview = {
   number: string
@@ -13,9 +20,25 @@ type HomeIssuePreview = {
   imageSrc?: string
 }
 
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['Person', 'PoliticalCandidate'],
+  name: 'Celeste Johnson',
+  url: 'https://celestefordistrict59.com',
+  sameAs: [],
+  seeksCandidacy: {
+    '@type': 'GovernmentOrganization',
+    name: 'Utah House of Representatives District 59',
+  },
+}
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <Nav />
       <main>
         {/* ─── HERO ─── */}
