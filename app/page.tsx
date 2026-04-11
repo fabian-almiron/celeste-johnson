@@ -19,6 +19,8 @@ export const metadata: Metadata = {
       'Vote Celeste Johnson for Utah House District 59. Former Midway Mayor supporting open space, local control, and affordable housing.',
     type: 'website',
     url: 'https://celestefordistrict59.com',
+    siteName: 'Celeste Johnson for Utah House District 59',
+    locale: 'en_US',
     images: [
       {
         url: '/images/hero.jpg',
@@ -113,11 +115,14 @@ export default function HomePage() {
             className="absolute inset-0"
             aria-hidden="true"
           >
-            <img
+            <Image
               src="/images/hero.jpg"
               alt="Celeste Johnson smiling outdoors beside an evergreen tree in the Wasatch Back"
-              className="w-full h-full object-cover"
+              fill
+              priority
+              className="object-cover"
               style={{ objectPosition: '70% center' }}
+              sizes="100vw"
             />
             {/* Left-to-right gradient so text is readable without obscuring face */}
             <div
@@ -189,11 +194,13 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
             {/* Photo placeholder */}
             <div className="relative">
-              <div className="aspect-auto rounded-sm overflow-hidden bg-muted">
-                <img
+              <div className="aspect-[4/5] rounded-sm overflow-hidden bg-muted relative">
+                <Image
                   src="/images/about-celeste-2.jpg"
                   alt="Celeste Johnson with family in a Wasatch Back barn"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               {/* Decorative accent */}

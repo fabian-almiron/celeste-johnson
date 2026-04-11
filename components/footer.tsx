@@ -129,30 +129,10 @@ export default function Footer() {
           <ul className="flex flex-col gap-2 text-sm">
             <li>
               <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:info@celestejohnsonforutah.com"
                 className="text-white/60 hover:text-white transition-colors"
               >
-                Facebook
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/60 hover:text-white transition-colors"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:info@celestejohnson59.com"
-                className="text-white/60 hover:text-white transition-colors"
-              >
-                info@celestejohnson59.com
+                info@celestejohnsonforutah.com
               </a>
             </li>
           </ul>

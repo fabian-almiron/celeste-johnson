@@ -17,6 +17,12 @@ const sourceSans = Source_Sans_3({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://celestefordistrict59.com'),
+  icons: {
+    icon: '/images/logo.svg',
+    shortcut: '/images/logo.svg',
+    apple: '/images/logo.svg',
+  },
+  manifest: '/site.webmanifest',
   title: 'Celeste Johnson for Utah House District 59 | District 59 Candidate',
   description:
     'Vote Celeste Johnson for Utah House District 59. Former two-term Midway Mayor supporting open space preservation, local control, and affordable housing. Learn her vision for the Wasatch Back.',
@@ -41,6 +47,8 @@ export const metadata: Metadata = {
       'Vote Celeste Johnson for Utah House District 59. Former Midway Mayor supporting open space, local control, and affordable housing.',
     type: 'website',
     url: 'https://celestefordistrict59.com',
+    siteName: 'Celeste Johnson for Utah House District 59',
+    locale: 'en_US',
     images: [
       {
         url: '/images/hero.jpg',
@@ -66,14 +74,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${libreBaskerville.variable} ${sourceSans.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className="antialiased">
         {children}
         <Analytics />

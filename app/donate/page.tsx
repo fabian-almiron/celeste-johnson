@@ -13,7 +13,52 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://celestefordistrict59.com/donate',
   },
+  openGraph: {
+    title: 'Donate | Celeste Johnson for Utah House District 59',
+    description:
+      "Support Celeste Johnson's campaign for Utah House District 59. Help bring thoughtful, community-first leadership to the Wasatch Back.",
+    type: 'website',
+    url: 'https://celestefordistrict59.com/donate',
+    siteName: 'Celeste Johnson for Utah House District 59',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/images/hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Celeste Johnson for Utah House District 59 — Donate',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Donate | Celeste Johnson for Utah House District 59',
+    description:
+      "Support Celeste Johnson's campaign for Utah House District 59.",
+    images: ['/images/hero.jpg'],
+  },
 }
+
+const donateSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://celestefordistrict59.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Donate',
+        item: 'https://celestefordistrict59.com/donate',
+      },
+    ],
+  },
+]
 
 const reasons = [
   {
@@ -37,6 +82,13 @@ const reasons = [
 export default function DonatePage() {
   return (
     <>
+      {donateSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Nav />
       <main>
         {/* ─── HERO ─── */}

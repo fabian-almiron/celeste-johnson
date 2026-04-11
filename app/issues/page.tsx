@@ -20,6 +20,8 @@ export const metadata: Metadata = {
       "Celeste Johnson's policy positions on open space, affordable housing, local control, smart growth, and transparent government.",
     type: 'website',
     url: 'https://celestefordistrict59.com/issues',
+    siteName: 'Celeste Johnson for Utah House District 59',
+    locale: 'en_US',
     images: [
       {
         url: '/images/farms-open-spaces.jpg',
@@ -54,6 +56,48 @@ const schemas = [
         position: 2,
         name: 'Policy Positions',
         item: 'https://celestefordistrict59.com/issues',
+      },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Celeste Johnson District 59 Policy Positions',
+    description: "Celeste Johnson's key policy positions for Utah House District 59.",
+    url: 'https://celestefordistrict59.com/issues',
+    numberOfItems: 4,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Protecting Farms, Open Spaces & Community Character',
+        url: 'https://celestefordistrict59.com/issues#farms',
+        description:
+          'Strengthening programs that protect working farmland and open space while respecting private property and local priorities.',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Local Voices, Local Choices',
+        url: 'https://celestefordistrict59.com/issues#local',
+        description:
+          'Bringing local experience to the Legislature to ensure Wasatch Back communities shape the decisions that affect them.',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Housing Affordability That Actually Works',
+        url: 'https://celestefordistrict59.com/issues#housing',
+        description:
+          'Housing policy shaped locally and measured by real outcomes for the families who live and work in resort-adjacent communities.',
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: 'Strong Communities, Healthy Families',
+        url: 'https://celestefordistrict59.com/issues#community',
+        description:
+          'Practical, community-based approaches that support family stability, mental and physical well-being, and early intervention.',
       },
     ],
   },

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ACTBLUE_DONATE_URL } from '@/lib/donate-url'
 import { ArrowRight, Quote } from 'lucide-react'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: "Why I'm Running | Celeste Johnson for Utah House District 59",
@@ -13,7 +14,52 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://celestefordistrict59.com/why-im-running',
   },
+  openGraph: {
+    title: "Why I'm Running | Celeste Johnson for Utah House District 59",
+    description:
+      "In her own words: why Celeste Johnson is running for Utah House District 59 and what she hopes to accomplish for the Wasatch Back.",
+    type: 'website',
+    url: 'https://celestefordistrict59.com/why-im-running',
+    siteName: 'Celeste Johnson for Utah House District 59',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/images/family-pic.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Celeste Johnson with her family in the Wasatch Back',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Why I'm Running | Celeste Johnson for Utah House District 59",
+    description:
+      "In her own words: why Celeste Johnson is running for Utah House District 59.",
+    images: ['/images/family-pic.jpg'],
+  },
 }
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://celestefordistrict59.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: "Why I'm Running",
+        item: 'https://celestefordistrict59.com/why-im-running',
+      },
+    ],
+  },
+]
 
 const motivations = [
   {
@@ -37,6 +83,13 @@ const motivations = [
 export default function WhyRunningPage() {
   return (
     <>
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Nav />
       <main>
         {/* ─── HERO ─── */}
@@ -251,11 +304,13 @@ export default function WhyRunningPage() {
         {/* ─── FUTURE GENERATIONS ─── */}
         <section className="py-20 lg:py-28 px-5 bg-background">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
-            <div className="aspect-[4/3] rounded-sm overflow-hidden bg-muted">
-              <img
+            <div className="aspect-[4/3] rounded-sm overflow-hidden bg-muted relative">
+              <Image
                 src="/images/family-pic.jpg"
                 alt="Celeste Johnson with her extended family outdoors, multi-generational portrait in front of a large pine tree"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div>

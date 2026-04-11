@@ -8,8 +8,98 @@ import { ACTBLUE_DONATE_URL } from '@/lib/donate-url'
 import { useState } from 'react'
 import { ArrowRight, Mail, Calendar, MessageSquare, Users } from 'lucide-react'
 
+function NewsletterSection() {
+  const [email, setEmail] = useState('')
+  const [newsletterLoading, setNewsletterLoading] = useState(false)
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false)
+  const [newsletterError, setNewsletterError] = useState<string | null>(null)
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setNewsletterLoading(true)
+    setNewsletterError(null)
+    try {
+      const response = await fetch('https://forms.getaltira.com/api/f/celeste-news-letter-a9d7eda3', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      if (!response.ok) throw new Error('Submission failed')
+      setNewsletterSubmitted(true)
+    } catch {
+      setNewsletterError('Something went wrong. Please try again.')
+    } finally {
+      setNewsletterLoading(false)
+    }
+  }
+
+  return (
+    <section
+      id="stay-updated"
+      className="scroll-mt-20 py-20 lg:py-28 px-5 bg-background"
+      aria-labelledby="updates-heading"
+    >
+      <div className="max-w-3xl mx-auto text-center">
+        <span className="text-primary text-xs font-semibold tracking-[0.18em] uppercase">
+          Stay Updated
+        </span>
+        <h2
+          id="updates-heading"
+          className="mt-3 text-4xl font-bold text-foreground text-balance"
+          style={{ fontFamily: "'Libre Baskerville', serif" }}
+        >
+          Stay connected to the campaign
+        </h2>
+        <p className="mt-5 text-muted-foreground leading-relaxed">
+          Sign up for campaign updates, event announcements, and news from
+          Celeste and the team.
+        </p>
+        {newsletterSubmitted ? (
+          <div className="mt-8 py-6">
+            <p className="text-primary font-semibold text-lg">You&apos;re signed up!</p>
+            <p className="mt-2 text-muted-foreground text-sm">
+              Thanks for staying connected to the campaign.
+            </p>
+          </div>
+        ) : (
+          <form
+            className="mt-8 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+            onSubmit={handleNewsletterSubmit}
+            aria-label="Newsletter signup"
+          >
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email address"
+              className="flex-1 px-4 py-3 rounded-sm border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors"
+              aria-label="Email address"
+            />
+            <button
+              type="submit"
+              disabled={newsletterLoading}
+              className="px-6 py-3 rounded-sm text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {newsletterLoading ? 'Signing up…' : 'Sign Up'}
+            </button>
+          </form>
+        )}
+        {newsletterError && (
+          <p className="mt-3 text-sm text-red-600">{newsletterError}</p>
+        )}
+        <p className="mt-3 text-xs text-muted-foreground">
+          Paid for by Celeste Johnson for Utah House District 59.
+        </p>
+      </div>
+    </section>
+  )
+}
+
 export default function GetInvolvedPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -18,10 +108,23 @@ export default function GetInvolvedPage() {
     message: '',
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Placeholder — connect to form service (e.g. Formspree, ActionNetwork, etc.)
-    setSubmitted(true)
+    setLoading(true)
+    setError(null)
+    try {
+      const response = await fetch('https://forms.getaltira.com/api/f/celeste-johnson-f9ab3c64', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!response.ok) throw new Error('Submission failed')
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong. Please try again or email us directly.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -318,11 +421,15 @@ export default function GetInvolvedPage() {
                       />
                     </div>
 
+                    {error && (
+                      <p className="text-sm text-red-600 text-center">{error}</p>
+                    )}
                     <button
                       type="submit"
-                      className="w-full py-3 rounded-sm text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+                      disabled={loading}
+                      className="w-full py-3 rounded-sm text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      Join the Campaign
+                      {loading ? 'Submitting…' : 'Join the Campaign'}
                     </button>
                     <p className="text-center text-xs text-muted-foreground">
                       Your information will only be used for campaign communications.
@@ -385,50 +492,7 @@ export default function GetInvolvedPage() {
         </section>
 
         {/* ─── STAY UPDATED ─── */}
-        <section
-          id="stay-updated"
-          className="scroll-mt-20 py-20 lg:py-28 px-5 bg-background"
-          aria-labelledby="updates-heading"
-        >
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary text-xs font-semibold tracking-[0.18em] uppercase">
-              Stay Updated
-            </span>
-            <h2
-              id="updates-heading"
-              className="mt-3 text-4xl font-bold text-foreground text-balance"
-              style={{ fontFamily: "'Libre Baskerville', serif" }}
-            >
-              Stay connected to the campaign
-            </h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed">
-              Sign up for campaign updates, event announcements, and news from
-              Celeste and the team.
-            </p>
-            <form
-              className="mt-8 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
-              onSubmit={(e) => e.preventDefault()}
-              aria-label="Newsletter signup"
-            >
-              <input
-                type="email"
-                required
-                placeholder="Your email address"
-                className="flex-1 px-4 py-3 rounded-sm border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors"
-                aria-label="Email address"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 rounded-sm text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity whitespace-nowrap"
-              >
-                Sign Up
-              </button>
-            </form>
-            <p className="mt-3 text-xs text-muted-foreground">
-              Paid for by Celeste Johnson for Utah House District 59.
-            </p>
-          </div>
-        </section>
+        <NewsletterSection />
 
         {/* ─── CONTACT ─── */}
         <section
@@ -455,31 +519,11 @@ export default function GetInvolvedPage() {
               </p>
               <div className="mt-8 space-y-4">
                 <a
-                  href="mailto:info@celestejohnson59.com"
+                  href="mailto:info@celestejohnsonforutah.com"
                   className="flex items-center gap-3 text-white/75 hover:text-white transition-colors text-sm"
                 >
                   <Mail size={18} className="text-accent" aria-hidden="true" />
-                  info@celestejohnson59.com
-                </a>
-              </div>
-              <div className="mt-8 flex gap-4">
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2 rounded-sm border border-white/25 text-white/70 hover:text-white hover:border-white/50 text-sm transition-all duration-200"
-                  aria-label="Follow on Facebook"
-                >
-                  Facebook
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2 rounded-sm border border-white/25 text-white/70 hover:text-white hover:border-white/50 text-sm transition-all duration-200"
-                  aria-label="Follow on Instagram"
-                >
-                  Instagram
+                  info@celestejohnsonforutah.com
                 </a>
               </div>
             </div>
@@ -505,7 +549,7 @@ export default function GetInvolvedPage() {
                 invited to reach out via email to begin the process.
               </p>
               <a
-                href="mailto:info@celestejohnson59.com"
+                href="mailto:info@celestejohnsonforutah.com"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-accent text-accent-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
               >
                 Send a Message <ArrowRight size={14} />

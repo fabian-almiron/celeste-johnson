@@ -20,6 +20,8 @@ export const metadata: Metadata = {
       '8+ years as Midway Mayor. Celeste Johnson championed open space, smart growth, and transparent leadership.',
     type: 'website',
     url: 'https://celestefordistrict59.com/about',
+    siteName: 'Celeste Johnson for Utah House District 59',
+    locale: 'en_US',
     images: [
       {
         url: '/images/about-celeste-2.jpg',

@@ -1,0 +1,17 @@
+{
+  "name": "Celeste Johnson for Utah House District 59",
+  "short_name": "Celeste for D59",
+  "description": "Vote Celeste Johnson for Utah House District 59. Former two-term Midway Mayor supporting open space preservation, local control, and affordable housing.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fcfcfd",
+  "theme_color": "#2a3a6e",
+  "icons": [
+    {
+      "src": "/images/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
