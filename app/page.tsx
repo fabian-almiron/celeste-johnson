@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 import Link from 'next/link'
+import { ACTBLUE_DONATE_URL } from '@/lib/donate-url'
 import Image from 'next/image'
 import { Mountain, TreePine, Users, Home, ChevronDown, ArrowRight, Quote } from 'lucide-react'
 
@@ -159,12 +160,14 @@ export default function HomePage() {
                 Working for the Wasatch Back and the people who call it home.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
-                <Link
-                  href="/donate"
+                <a
+                  href={ACTBLUE_DONATE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-8 py-3.5 rounded-sm text-sm font-semibold tracking-wide bg-accent text-accent-foreground hover:opacity-90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
                 >
                   Donate to the Campaign
-                </Link>
+                </a>
                 <Link
                   href="/get-involved"
                   className="px-8 py-3.5 rounded-sm text-sm font-semibold tracking-wide border border-white/40 text-white hover:bg-white/10 transition-colors duration-200"
@@ -576,12 +579,14 @@ export default function HomePage() {
               local events, and bring thoughtful, community-first leadership
               to the Wasatch Back.
             </p>
-            <Link
-              href="/donate"
+            <a
+              href={ACTBLUE_DONATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-9 inline-block px-10 py-4 rounded-sm text-sm font-bold tracking-wide bg-white text-primary hover:bg-white/90 transition-colors hover:scale-[1.02] active:scale-[0.98] duration-200"
             >
               Donate Now
-            </Link>
+            </a>
             <p className="mt-4 text-white/40 text-xs">
               Paid for by Celeste Johnson for Utah House District 59.
             </p>

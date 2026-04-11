@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ACTBLUE_DONATE_URL } from '@/lib/donate-url'
 
 export default function Footer() {
   return (
@@ -21,12 +22,14 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link
-              href="/donate"
+            <a
+              href={ACTBLUE_DONATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-2.5 rounded-sm text-sm font-semibold bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
             >
               Donate
-            </Link>
+            </a>
             <Link
               href="/get-involved"
               className="px-6 py-2.5 rounded-sm text-sm font-semibold border border-white/30 text-white hover:bg-white/10 transition-colors"
@@ -93,15 +96,26 @@ export default function Footer() {
               { label: 'Get Involved', href: '/get-involved' },
               { label: 'Volunteer', href: '/get-involved#volunteer' },
               { label: 'Attend an Event', href: '/get-involved#events' },
-              { label: 'Donate', href: '/donate' },
+              { label: 'Donate', href: ACTBLUE_DONATE_URL, external: true },
             ].map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
+              <li key={link.label}>
+                {link.external ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

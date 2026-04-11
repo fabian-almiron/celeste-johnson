@@ -4,6 +4,7 @@ import InternalHeroBackground from '@/components/internal-hero-background'
 import Link from 'next/link'
 import { Shield, ArrowRight, Users, Mountain, Home } from 'lucide-react'
 import type { Metadata } from 'next'
+import { ACTBLUE_DONATE_URL } from '@/lib/donate-url'
 
 export const metadata: Metadata = {
   title: 'Donate | Celeste Johnson for Utah House District 59',
@@ -32,8 +33,6 @@ const reasons = [
     text: 'Support steady, accountable leadership in the Legislature',
   },
 ]
-
-const amounts = [10, 25, 50, 100, 250, 500]
 
 export default function DonatePage() {
   return (
@@ -133,65 +132,21 @@ export default function DonatePage() {
                   Make a contribution
                 </h3>
                 <p className="text-muted-foreground text-sm mb-8">
-                  Select an amount or enter a custom contribution below.
+                  You&apos;ll complete your contribution on ActBlue&apos;s secure
+                  donation page.
                 </p>
 
-                {/* Suggested amounts */}
-                <div className="grid grid-cols-3 gap-3 mb-6">
-                  {amounts.map((amt) => (
-                    <button
-                      key={amt}
-                      type="button"
-                      className="py-3 rounded-sm border border-border text-sm font-semibold text-foreground hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/40"
-                      aria-label={`Donate $${amt}`}
-                    >
-                      ${amt}
-                    </button>
-                  ))}
-                </div>
+                <a
+                  href={ACTBLUE_DONATE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 px-8 py-3.5 rounded-sm text-sm font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary/40"
+                  aria-label="Donate securely to Celeste Johnson's campaign on ActBlue"
+                >
+                  Donate Securely Now
+                </a>
 
-                {/* Custom amount */}
-                <div className="mb-8">
-                  <label
-                    htmlFor="custom-amount"
-                    className="block text-sm font-medium text-foreground mb-1.5"
-                  >
-                    Or enter a custom amount
-                  </label>
-                  <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground text-sm">
-                      $
-                    </span>
-                    <input
-                      id="custom-amount"
-                      type="number"
-                      min="1"
-                      placeholder="Other amount"
-                      className="w-full pl-8 pr-4 py-2.5 rounded-sm border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-colors"
-                    />
-                  </div>
-                </div>
-
-                {/* Placeholder donation embed / CTA */}
-                <div className="rounded-sm border border-dashed border-primary/40 bg-primary/5 p-6 text-center mb-6">
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Secure donation processing powered by your campaign finance
-                    platform.
-                  </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-sm text-sm font-bold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
-                    aria-label="Donate securely to Celeste Johnson's campaign"
-                  >
-                    Donate Securely Now
-                  </a>
-                  <p className="mt-3 text-xs text-muted-foreground">
-                    Connect your preferred donation platform (ActBlue,
-                    WinRed, Anedot, etc.) here.
-                  </p>
-                </div>
-
-                <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                <div className="mt-8 flex items-center justify-center gap-2 text-xs text-muted-foreground">
                   <Shield size={13} aria-hidden="true" />
                   256-bit SSL encryption — your information is secure
                 </div>

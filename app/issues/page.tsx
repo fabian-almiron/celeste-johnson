@@ -2,6 +2,7 @@ import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 import InternalHeroBackground from '@/components/internal-hero-background'
 import Link from 'next/link'
+import { ACTBLUE_DONATE_URL } from '@/lib/donate-url'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -312,12 +313,14 @@ export default function IssuesPage() {
               help bring local voices to Utah House District 59.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/donate"
+              <a
+                href={ACTBLUE_DONATE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-sm text-sm font-semibold bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
               >
                 Donate to the Campaign
-              </Link>
+              </a>
               <Link
                 href="/get-involved"
                 className="px-8 py-3.5 rounded-sm text-sm font-semibold border border-white/30 text-white hover:bg-white/10 transition-colors"

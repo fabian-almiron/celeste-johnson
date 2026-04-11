@@ -4,6 +4,7 @@ import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 import InternalHeroBackground from '@/components/internal-hero-background'
 import Link from 'next/link'
+import { ACTBLUE_DONATE_URL } from '@/lib/donate-url'
 import { useState } from 'react'
 import { ArrowRight, Mail, Calendar, MessageSquare, Users } from 'lucide-react'
 
@@ -529,12 +530,14 @@ export default function GetInvolvedPage() {
               If you can&apos;t volunteer, a contribution to the campaign helps
               Celeste reach more voters across the Wasatch Back.
             </p>
-            <Link
-              href="/donate"
+            <a
+              href={ACTBLUE_DONATE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-7 inline-block px-8 py-3.5 rounded-sm text-sm font-semibold bg-white text-primary hover:bg-white/90 transition-colors"
             >
               Donate to the Campaign
-            </Link>
+            </a>
           </div>
         </section>
       </main>

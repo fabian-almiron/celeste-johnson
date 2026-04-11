@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
+import { ACTBLUE_DONATE_URL } from '@/lib/donate-url'
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -58,12 +59,14 @@ export default function Nav() {
               <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
             </Link>
           ))}
-          <Link
-            href="/donate"
+          <a
+            href={ACTBLUE_DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 px-5 py-2 rounded-sm font-body text-base font-bold tracking-wide transition-all duration-200 bg-accent text-accent-foreground hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
           >
             Donate
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile menu button */}
@@ -99,13 +102,15 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/donate"
+          <a
+            href={ACTBLUE_DONATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="mt-4 px-5 py-3 rounded-sm text-center font-body text-base font-bold tracking-wide bg-accent text-accent-foreground hover:opacity-90 transition-opacity"
           >
             Donate Now
-          </Link>
+          </a>
         </nav>
       </div>
     </header>

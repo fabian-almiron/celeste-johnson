@@ -2,6 +2,7 @@ import Nav from '@/components/nav'
 import Footer from '@/components/footer'
 import InternalHeroBackground from '@/components/internal-hero-background'
 import Link from 'next/link'
+import { ACTBLUE_DONATE_URL } from '@/lib/donate-url'
 import { ArrowRight, Quote } from 'lucide-react'
 import type { Metadata } from 'next'
 
@@ -306,12 +307,14 @@ export default function WhyRunningPage() {
               District 59.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/donate"
+              <a
+                href={ACTBLUE_DONATE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-sm text-sm font-semibold bg-white text-primary hover:bg-white/90 transition-colors"
               >
                 Donate Now
-              </Link>
+              </a>
               <Link
                 href="/get-involved"
                 className="px-8 py-3.5 rounded-sm text-sm font-semibold border border-white/40 text-white hover:bg-white/10 transition-colors"

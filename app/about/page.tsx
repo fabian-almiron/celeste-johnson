@@ -3,6 +3,7 @@ import Footer from '@/components/footer'
 import InternalHeroBackground from '@/components/internal-hero-background'
 import AboutIntroVideo from '@/components/about-intro-video'
 import Link from 'next/link'
+import { ACTBLUE_DONATE_URL } from '@/lib/donate-url'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 import type { Metadata } from 'next'
 
@@ -394,12 +395,14 @@ export default function AboutPage() {
               District 59.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/donate"
+              <a
+                href={ACTBLUE_DONATE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-sm text-sm font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
               >
                 Donate Now
-              </Link>
+              </a>
               <Link
                 href="/get-involved"
                 className="px-8 py-3.5 rounded-sm text-sm font-semibold border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
