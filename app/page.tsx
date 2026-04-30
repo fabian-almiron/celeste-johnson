@@ -225,7 +225,7 @@ export default function HomePage() {
                 Celeste Johnson is the former two-term mayor of Midway with 8+ years of local leadership experience. She is a wife, mother of four, and a fierce advocate for the people and spaces that make the Wasatch Back home. Her tenure as Midway Mayor was marked by open space preservation, smart growth planning, and transparent leadership that earned her unopposed re-election.
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                She is running for Utah House District 59 — representing the communities of Midway, Oakley, and surrounding areas — to center local voices in decision-making, protect the character of our communities, and make sure growth and land-use policies work for the people who live and work here. Celeste believes local control, open space preservation, affordable housing solutions, and transparent government are essential to the Wasatch Back's future.
+                She is running for Utah House District 59 — representing the Heber Valley, Wasatch County, and Park City — to center local voices in decision-making, protect the character of our communities, and make sure growth and land-use policies work for the people who live and work here. Celeste believes local control, open space preservation, affordable housing solutions, and transparent government are essential to the Wasatch Back's future.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
